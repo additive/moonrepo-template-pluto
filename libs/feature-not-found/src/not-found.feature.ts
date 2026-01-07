@@ -9,7 +9,6 @@ import { filter, firstValueFrom } from 'rxjs'
 @Component({
 	selector: 'app-feature-not-found',
 	templateUrl: './not-found.feature.html',
-	styleUrl: './not-found.feature.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NotFoundFeature {

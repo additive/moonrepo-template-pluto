@@ -7,7 +7,6 @@ import { FaIconComponent } from '@fortawesome/angular-fontawesome'
 @Component({
 	selector: 'app-feature-example',
 	templateUrl: './example.feature.html',
-	styleUrl: './example.feature.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	imports: [FaIconComponent],
 })

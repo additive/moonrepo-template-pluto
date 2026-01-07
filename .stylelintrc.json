@@ -3,6 +3,31 @@
   "rules": {
     "no-empty-source": null,
     "declaration-property-value-no-unknown": true,
+    "import-notation": null,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "layer",
+          "config",
+          "plugin",
+          "variant",
+          "theme",
+          "source",
+          "utility",
+          "custom-variant"
+        ]
+      }
+    ],
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": ["theme"]
+      }
+    ],
     "selector-type-no-unknown": [
       true,
       {

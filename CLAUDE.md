@@ -59,9 +59,21 @@ Task execution format: `moon <app|lib>:<command>` (e.g., `moon pluto:dev`, `moon
 - **OnPush change detection** - Always set `changeDetection: ChangeDetectionStrategy.OnPush`
 - **inject() function** - Use `inject()` instead of constructor injection
 - **Reactive Forms** - Preferred over template-driven forms
-- **host object** - Use `host` in decorator instead of `@HostBinding`/`@HostListener`
 - **NgOptimizedImage** - Required for all static images
 - **No ngClass/ngStyle** - Use `class` and `style` bindings instead
+
+**Component Host Styling:**
+- **host property** - Preferred for `@HostBinding`/`@HostListener` alternatives
+- **Feature components** - Do NOT use `host.class` for styling. Feature components are transparent wrappers
+- **Layout styling** - Use inner wrapper `<div>` elements with class attributes instead of host classes
+
+## Styling (Tailwind CSS v4)
+
+- **Utility-first** - Use Tailwind utility classes directly in templates
+- **No component SCSS** - Avoid creating `.scss` files for components; use Tailwind classes instead
+- **Inner wrappers** - For complex layouts, wrap content in a `<div>` with Tailwind classes
+- **Semantic elements** - Use `<header>`, `<section>`, `<main>`, etc. as natural wrappers when appropriate
+- **Global styles** - Located in `libs/app-theme/main.scss`
 
 ## Code Style
 
@@ -81,6 +93,11 @@ Task execution format: `moon <app|lib>:<command>` (e.g., `moon pluto:dev`, `moon
 - **Linting:** Biome (JS/TS), ESLint (Angular-specific), Stylelint (CSS/SCSS), Prettier (JSON/YAML/HTML/MD)
 - **Testing:** Vitest (unit), Playwright (E2E)
 - **TypeScript:** Very strict settings enabled
+
+**Dependencies:**
+- Add dependencies to **workspace root** `package.json` unless only needed by a specific lib
+- Use `ng add <package>` for Angular-related packages when available
+- Use `pnpm add <package>` for general packages
 
 ## Environment Files
 

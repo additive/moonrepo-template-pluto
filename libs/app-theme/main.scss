@@ -1,5 +1,9 @@
 @forward "tailwind";
 
-body {
+html {
 	scroll-behavior: smooth;
+}
+
+body {
+	@apply min-h-screen antialiased;
 }
