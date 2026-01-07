@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../.moon/cache/types/libs/feature-example",
+    "paths": {
+      "@pluto/types/*": ["../types/src/*"],
+      "@pluto/http/*": ["../app-http/src/*"]
+    }
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../types"
+    },
+    {
+      "path": "../app-http"
+    },
+    {
+      "path": "tsconfig.editor.json"
+    },
+    {
+      "path": "tsconfig.lib.json"
+    },
+    {
+      "path": "tsconfig.spec.json"
+    }
+  ]
+}

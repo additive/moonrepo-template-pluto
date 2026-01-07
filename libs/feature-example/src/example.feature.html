@@ -1,0 +1,94 @@
+<div class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 p-8">
+	<header class="mx-auto max-w-4xl">
+		<h1 class="text-3xl font-bold text-white">httpResource Example</h1>
+		<p class="mt-2 text-slate-400">
+			Demonstrating Angular's new reactive httpResource API with automatic signal-based state
+			management.
+		</p>
+	</header>
+
+	<main class="mx-auto mt-8 max-w-4xl space-y-8">
+		<!-- Auto-loaded posts section -->
+		<section class="rounded-2xl border border-slate-700 bg-slate-800/50 p-6">
+			<h2 class="text-xl font-semibold text-slate-200">Auto-loaded Posts</h2>
+			<p class="mt-1 text-sm text-slate-400">
+				These posts are fetched automatically using
+				<code class="text-cyan-400">httpResource()</code>
+			</p>
+
+			<div class="mt-4 space-y-3">
+				@if (posts.isLoading()) {
+					<p class="text-slate-500">Loading posts...</p>
+				} @else if (posts.error()) {
+					<p class="text-red-400">Failed to load posts</p>
+				} @else if (posts.hasValue()) {
+					@for (post of posts.value(); track post.id) {
+						<article class="rounded-lg border border-slate-600 bg-slate-700/50 p-4">
+							<h3 class="font-medium text-slate-200">{{ post.title }}</h3>
+							<p class="mt-1 line-clamp-2 text-sm text-slate-400">{{ post.body }}</p>
+						</article>
+					}
+				}
+			</div>
+		</section>
+
+		<!-- Reactive fetch section -->
+		<section class="rounded-2xl border border-slate-700 bg-slate-800/50 p-6">
+			<h2 class="text-xl font-semibold text-slate-200">Reactive HTTP Request</h2>
+			<p class="mt-1 text-sm text-slate-400">
+				Click to fetch a random post — the resource reacts to signal changes
+			</p>
+
+			<button
+				class="mt-4 rounded-lg bg-cyan-600 px-4 py-2 font-medium text-white transition-colors hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-800 disabled:opacity-50"
+				[disabled]="randomPost.isLoading()"
+				(click)="fetchRandomPost()"
+			>
+				@if (randomPost.isLoading()) {
+					Fetching...
+				} @else {
+					Fetch Random Post
+				}
+			</button>
+
+			@if (randomPost.error()) {
+				<div class="mt-4 rounded-lg border border-red-500/50 bg-red-500/10 p-4 text-red-400">
+					Failed to fetch post
+				</div>
+			}
+
+			@if (randomPost.hasValue()) {
+				<article class="mt-4 rounded-lg border border-cyan-500/30 bg-cyan-500/10 p-4">
+					<div class="text-xs text-cyan-400">Post #{{ randomPost.value().id }}</div>
+					<h3 class="mt-1 font-medium text-slate-200">{{ randomPost.value().title }}</h3>
+					<p class="mt-2 text-sm text-slate-400">{{ randomPost.value().body }}</p>
+				</article>
+			}
+		</section>
+
+		<!-- Code example section -->
+		<section class="rounded-2xl border border-slate-700 bg-slate-800/50 p-6">
+			<h2 class="text-xl font-semibold text-slate-200">Usage Example</h2>
+			<pre
+				class="mt-4 overflow-x-auto rounded-lg bg-slate-900 p-4 text-sm text-slate-300"
+			><code>import {{ '{' }} httpResource {{ '}' }} from '&#64;angular/common/http'
+import {{ '{' }} signal {{ '}' }} from '&#64;angular/core'
+
+// Auto-fetch on component init
+posts = httpResource&lt;Post[]&gt;(() => '/api/posts')
+
+// Reactive fetch based on signal
+userId = signal&lt;number | undefined&gt;(undefined)
+user = httpResource&lt;User&gt;(() => {{ '{' }}
+  const id = this.userId()
+  return id ? `/api/users/${{ '{' }}id{{ '}' }}` : undefined
+{{ '}' }})
+
+// Access in template
+posts.value()      // The data
+posts.isLoading()  // Loading state
+posts.error()      // Error if any
+posts.hasValue()   // Check if loaded</code></pre>
+		</section>
+	</main>
+</div>
