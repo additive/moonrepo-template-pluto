@@ -8,8 +8,7 @@ import type { PackageJson } from 'type-fest'
  */
 export function getEnvironment(): BUILD_ENV {
 	if (!process.env.NODE_ENV) {
-		// biome-ignore lint/suspicious/noConsole: warning is enough
-		console.warn('[WARN] ⚠️ No environment defined, falling back to development!')
+		console.warn('[WARN] No environment defined, falling back to development!')
 		return 'development'
 	}
 	return process.env.NODE_ENV
