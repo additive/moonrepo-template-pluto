@@ -2,53 +2,118 @@
 <h1 align="center">
   <img src="assets/pluto.png" alt="Pluto" width="200" />
   <br>
+  <br>
+  Pluto — Angular Moonrepo Template
 </h1>
+
+<p align="center">
+  <strong>Launch your Angular projects into orbit with the power of moonrepo!</strong>
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#ai-assisted">AI Assisted</a>
+</p>
+
 <br>
 
-# Moonrepo template **_Pluto_**
+**Pluto** is a production-ready Angular monorepo template powered by [moonrepo](https://moonrepo.dev) — because every great Angular project deserves a moon!
 
-This moonrepo template is a copy of our companies enterprise application project to provide a solid base for others. It mainly has the possibility to create multiple applications that share the same core structure and configuration. We have done it this way to provide customized applications for our customers.
+Born from real-world enterprise applications, this template provides a battle-tested foundation for building scalable, multi-tenant Angular applications. Whether you're launching a single app or an entire constellation of customized solutions, Pluto has you covered.
 
-Please note, that we have not cleaned everything to the moon and that some parts might be missing. Due to our policies we cannot share everything but provide a good base hopefully.
-
-The reason for the `angular.json` to sit in the root of the monorepo is because otherwise workspace installed Angular dependencies would not be updateable by `ng` update command. Other apps can just have their `angular.json` as usual in the apps folder.
-
-Read more about our custom solutions here: https://www.additive-net.de/de/solutions
+> **Note:** The `angular.json` lives in the workspace root to enable `ng update` for workspace-wide Angular dependencies. Individual apps can have their own `angular.json` as needed.
 
 ## Features
 
-- moonrepo
-- moonrepo templates
-- prototools
-- prettier
-- eslint
-- stylelint
-- biome
-- pnpm
-- node
-- justfile
-- editorconfig
-- vscode settings
-- zed settings
-- very strict tsconfig settings
-- easy project upgrades
-- AI agent setup and instructions
+| Category                 | Tools                                          |
+| ------------------------ | ---------------------------------------------- |
+| **Task Orchestration**   | moonrepo, moonrepo templates, prototools       |
+| **Code Quality**         | Biome, ESLint, Stylelint, Prettier             |
+| **Styling**              | Tailwind CSS v4, SCSS                          |
+| **Package Management**   | pnpm, Node.js                                  |
+| **Developer Experience** | justfile, editorconfig, VS Code & Zed settings |
+| **TypeScript**           | Very strict tsconfig — we don't mess around!   |
+| **AI Ready**             | Claude Code instructions (`CLAUDE.md`)         |
 
-## Libs
+## Quick Start
 
-- app-assets: Angular assets to share
-- app-build: Angular build related
-- app-config: Angular config related
-- app-environment: Angular shared environment
-- app-http: Application http client and configuration
-- app-layout: Main application layout components
-- app-theme: Application shared theme
-- feature-not-found: Application not-found page
-- feature-example: Example feature to showcase how they might be added to your application
-- moon-project: Custom plugin to get access to `moon.yml` configuration inside the application and other build steps or in scripts
-- plugin-eslint: Base configuration for eslint setup, super useful to not have redundant configuration like NX does it
-- types: Global TypeScript types and resets for any lib and app
+```bash
+# Install dependencies
+pnpm install
 
-## AI
+# Start development server
+just dev
 
-We are using a local LLM model for our project together with `opencode`. Claude is just used here so I can easily port our parts into this project together with tailwind. This way we also benefit from improvements from Claude here ^^.
+# Build for production
+moon pluto:build
+
+# Run all linters
+just lint
+
+# Run tests
+just test
+```
+
+## Architecture
+
+```
+pluto/
+├── apps/
+│   └── pluto/          # Main Angular application
+└── libs/
+    ├── app-*           # Core application libraries
+    ├── feature-*       # Feature modules
+    ├── ui-*            # UI component libraries
+    └── types/          # Shared TypeScript types
+```
+
+### Core Libraries (`app-*`)
+
+| Library           | Purpose                           |
+| ----------------- | --------------------------------- |
+| `app-assets`      | Shared assets across applications |
+| `app-build`       | Build plugins and transformers    |
+| `app-config`      | Application configuration         |
+| `app-environment` | Environment variables             |
+| `app-http`        | HTTP client and interceptors      |
+| `app-layout`      | Main layout components            |
+| `app-theme`       | Global theme and Tailwind setup   |
+
+### Feature Libraries (`feature-*`)
+
+| Library             | Purpose                  |
+| ------------------- | ------------------------ |
+| `feature-example`   | Example feature showcase |
+| `feature-not-found` | 404 page                 |
+
+### Utilities
+
+| Library         | Purpose                            |
+| --------------- | ---------------------------------- |
+| `moon-project`  | Access `moon.yml` config in code   |
+| `plugin-eslint` | Shared ESLint configuration        |
+| `types`         | Global TypeScript types and resets |
+
+## AI Assisted
+
+This template is developed by our engineers by hand with care. We use local LLMs with [opencode](https://github.com/opencode-ai/opencode) as an assistant for enhancements — not as a replacement for thoughtful development.
+
+Claude is only used in this public repository to also benefit from it while having everything reviewed by hand when we sync back improvements and changes to our interal project.
+
+## About
+
+Pluto is developed and maintained by [ADDITIVE GmbH](https://www.additive-net.de), a certified technology company specializing in high-end engineering solutions. We build web-based applications, quality management systems, and digital laboratory solutions for enterprises across various industries.
+
+This template powers our internal multi-tenant applications, allowing us to deliver customized solutions to our customers while maintaining a shared, well-tested core architecture.
+
+Learn more about our [solutions and services](https://www.additive-net.de/de/solutions).
+
+<br>
+
+<p align="center">
+  Made with care by <a href="https://www.additive-net.de">ADDITIVE GmbH</a>
+  <br>
+  <sub>To the moon!</sub>
+</p>
