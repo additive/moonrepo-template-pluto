@@ -84,6 +84,11 @@ Task execution format: `moon <app|lib>:<command>` (e.g., `moon pluto:dev`, `moon
 - **Type definitions:** Use `type` instead of `interface`
 - **Import organization:** External packages → @pluto/* → @pluto-feature/* → aliases → relative paths
 
+**Domain-Driven Structure:**
+- **No inline types** - Never define types/interfaces directly in components or features
+- **Model files** - Place types in dedicated model files (e.g., `models/post.ts`)
+- **Feature structure** - Use `src/models/` directory within features for domain types
+
 **Global variables available:** `BUILD_ENV`, `BUILD_DATE`, `APP_VERSION`, `APP_HASH`, `NONCE`
 
 ## Tooling

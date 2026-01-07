@@ -83,10 +83,11 @@ pluto/
 
 ### Feature Libraries (`feature-*`)
 
-| Library             | Purpose                  |
-| ------------------- | ------------------------ |
-| `feature-example`   | Example feature showcase |
-| `feature-not-found` | 404 page                 |
+| Library             | Purpose                          |
+| ------------------- | -------------------------------- |
+| `feature-welcome`   | Welcome landing page             |
+| `feature-example`   | HTTP client usage demonstration  |
+| `feature-not-found` | 404 page                         |
 
 ### Utilities
 

@@ -4,9 +4,7 @@
     "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/feature-welcome",
     "paths": {
-      "@pluto/types/*": [
-        "../types/src/*"
-      ]
+      "@pluto/types/*": ["../types/src/*"]
     }
   },
   "files": [],

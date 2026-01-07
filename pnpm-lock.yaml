@@ -291,11 +291,20 @@ importers:
 
   libs/feature-example:
     dependencies:
+      '@pluto/http':
+        specifier: workspace:*
+        version: link:../app-http
       '@pluto/types':
         specifier: workspace:*
         version: link:../types
 
   libs/feature-not-found:
+    dependencies:
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../types
+
+  libs/feature-welcome:
     dependencies:
       '@pluto/types':
         specifier: workspace:*
