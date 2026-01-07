@@ -12,11 +12,13 @@
       "@pluto/config/*": ["../../libs/app-config/src/*"],
       "@pluto/environment": ["../../libs/app-environment/src/index.ts"],
       "@pluto/environment/*": ["../../libs/app-environment/src/*"],
+      "@pluto/http/*": ["../../libs/app-http/src/*"],
       "@pluto/layout/*": ["../../libs/app-layout/src/*"],
       "@pluto/moon-project": ["../../libs/moon-project/src/index.ts"],
       "@pluto/moon-project/*": ["../../libs/moon-project/src/*"],
       "@pluto/theme/*": ["../../libs/app-theme/*"],
-      "@pluto/types/*": ["../../libs/types/src/*"]
+      "@pluto/types/*": ["../../libs/types/src/*"],
+      "@pluto/ui-icons/*": ["../../libs/ui-icons/src/*"]
     }
   },
   "files": [],
@@ -35,6 +37,9 @@
       "path": "../../libs/app-environment"
     },
     {
+      "path": "../../libs/app-http"
+    },
+    {
       "path": "../../libs/app-layout"
     },
     {
@@ -51,6 +56,9 @@
     },
     {
       "path": "../../libs/types"
+    },
+    {
+      "path": "../../libs/ui-icons"
     },
     {
       "path": "tsconfig.app.json"

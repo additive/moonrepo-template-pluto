@@ -15,7 +15,7 @@
         "build": {
           "builder": "angular-extended-builder:application",
           "options": {
-            "browser": "./apps/pluto/src/bootstrap.ts",
+            "browser": "./apps/pluto/src/main.ts",
             "index": "./apps/pluto/node_modules/@pluto/build/index.html",
             "outputPath": "./apps/pluto/dist",
             "tsConfig": "./apps/pluto/tsconfig.app.json",
@@ -23,10 +23,7 @@
             "crossOrigin": "anonymous",
             "webWorkerTsConfig": "./apps/pluto/tsconfig.worker.json",
             "polyfills": ["@pluto/build/polyfills"],
-            "styles": [
-              "./apps/pluto/node_modules/@pluto/theme/main.scss",
-              "./apps/pluto/src/theme.scss"
-            ],
+            "styles": ["./apps/pluto/node_modules/@pluto/theme/main.scss"],
             "assets": [
               {
                 "glob": "**/*",
@@ -37,10 +34,7 @@
               "./apps/pluto/src/robots.txt"
             ],
             "indexHtmlTransformer": "@pluto/build/index-html-transform",
-            "plugins": [
-              "@pluto/build/plugin-define",
-              "@pluto/moon-project/esbuild-plugin"
-            ]
+            "plugins": ["@pluto/build/plugin-define", "@pluto/moon-project/esbuild-plugin"]
           },
           "configurations": {
             "production": {

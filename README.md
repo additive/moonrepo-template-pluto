@@ -11,6 +11,8 @@ This moonrepo template is a copy of our companies enterprise application project
 
 Please note, that we have not cleaned everything to the moon and that some parts might be missing. Due to our policies we cannot share everything but provide a good base hopefully.
 
+The reason for the `angular.json` to sit in the root of the monorepo is because otherwise workspace installed Angular dependencies would not be updateable by `ng` update command. Other apps can just have their `angular.json` as usual in the apps folder.
+
 Read more about our custom solutions here: https://www.additive-net.de/de/solutions
 
 ## Features

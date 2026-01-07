@@ -208,6 +208,9 @@ importers:
       '@pluto/environment':
         specifier: workspace:*
         version: link:../../libs/app-environment
+      '@pluto/http':
+        specifier: workspace:*
+        version: link:../../libs/app-http
       '@pluto/layout':
         specifier: workspace:*
         version: link:../../libs/app-layout
@@ -220,6 +223,9 @@ importers:
       '@pluto/types':
         specifier: workspace:*
         version: link:../../libs/types
+      '@pluto/ui-icons':
+        specifier: workspace:*
+        version: link:../../libs/ui-icons
     devDependencies:
       typescript:
         specifier: 5.9.3

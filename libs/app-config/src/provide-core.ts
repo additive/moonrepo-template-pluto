@@ -9,8 +9,11 @@ import { APP_ENVIRONMENT } from '@pluto/environment'
  */
 export function provideCore(): EnvironmentProviders {
 	return provideAppInitializer(() => {
-		const _environment = inject(APP_ENVIRONMENT)
+		const environment = inject(APP_ENVIRONMENT)
 
-		const _buildDate = format(BUILD_DATE, 'PP')
+		const buildDate = format(BUILD_DATE, 'PP')
+		console.info('[BOOTSTRAP]', `Pluto v${APP_VERSION} (${APP_HASH})`)
+		console.info('[BOOTSTRAP]', `Build ${BUILD_ENV} at ${buildDate}`)
+		console.debug('[BOOTSTRAP]', 'Mode:', environment.production)
 	})
 }

@@ -17,9 +17,11 @@ dependsOn:
   - app-build
   - app-config
   - app-environment
+  - app-http
   - app-layout
   - app-theme
   - feature-example
   - feature-not-found
   - moon-project
   - types
+  - ui-icons

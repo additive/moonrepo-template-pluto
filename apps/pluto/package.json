@@ -9,10 +9,12 @@
     "@pluto/build": "workspace:*",
     "@pluto/config": "workspace:*",
     "@pluto/environment": "workspace:*",
+    "@pluto/http": "workspace:*",
     "@pluto/layout": "workspace:*",
     "@pluto/moon-project": "workspace:*",
     "@pluto/theme": "workspace:*",
-    "@pluto/types": "workspace:*"
+    "@pluto/types": "workspace:*",
+    "@pluto/ui-icons": "workspace:*"
   },
   "devDependencies": {
     "typescript": "5.9.3"
