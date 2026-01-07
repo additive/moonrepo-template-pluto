@@ -5,6 +5,8 @@ export default [
 		path: '',
 		title: 'Welcome',
 		loadComponent: () => import('./welcome.feature').then((m) => m.WelcomeFeature),
-		menu: {},
+		menu: {
+			priority: -1,
+		},
 	},
 ] satisfies Routes

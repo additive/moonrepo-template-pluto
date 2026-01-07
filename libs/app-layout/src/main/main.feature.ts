@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { RouterOutlet } from '@angular/router'
+import { NgOptimizedImage } from '@angular/common'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router'
+import { RouterMenusService } from 'angular-router-menus'
 
 /**
  * The main layout.
@@ -8,6 +10,8 @@ import { RouterOutlet } from '@angular/router'
 	selector: 'app-main',
 	templateUrl: './main.feature.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	imports: [RouterOutlet],
+	imports: [RouterOutlet, RouterLink, RouterLinkActive, NgOptimizedImage],
 })
-export class MainFeature {}
+export class MainFeature {
+	readonly menu = inject(RouterMenusService).use('main')
+}

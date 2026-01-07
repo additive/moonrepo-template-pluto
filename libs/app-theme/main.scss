@@ -5,5 +5,5 @@ html {
 }
 
 body {
-	@apply min-h-screen antialiased;
+	@apply min-h-screen antialiased bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-900;
 }
