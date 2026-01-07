@@ -12,8 +12,12 @@ export default [
 		children: [
 			{
 				path: '',
-				redirectTo: 'example',
+				redirectTo: 'welcome',
 				pathMatch: 'full',
+			},
+			{
+				path: 'welcome',
+				loadChildren: () => import('@pluto-feature/welcome/welcome-routes'),
 			},
 			{
 				path: 'example',

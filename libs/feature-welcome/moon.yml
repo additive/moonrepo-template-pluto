@@ -1,11 +1,11 @@
-id: 'feature-example'
+id: 'feature-welcome'
 layer: 'library'
 language: 'typescript'
 stack: 'frontend'
 tags:
   - styles
 project:
-  name: 'Feature Example'
-  description: 'Example feature'
+  name: 'Feature Welcome'
+  description: 'Welcome landing page for Pluto'
 dependsOn:
   - types

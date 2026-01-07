@@ -27,6 +27,9 @@
       "path": "libs/app-theme"
     },
     {
+      "path": "libs/feature-welcome"
+    },
+    {
       "path": "libs/feature-example"
     },
     {

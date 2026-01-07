@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "outDir": "../../.moon/cache/types/apps/pluto",
     "paths": {
+      "@pluto-feature/welcome/*": ["../../libs/feature-welcome/src/*"],
       "@pluto-feature/example/*": ["../../libs/feature-example/src/*"],
       "@pluto-feature/not-found/*": ["../../libs/feature-not-found/src/*"],
       "@pluto/assets/*": ["../../libs/app-assets/*"],
@@ -44,6 +45,9 @@
     },
     {
       "path": "../../libs/app-theme"
+    },
+    {
+      "path": "../../libs/feature-welcome"
     },
     {
       "path": "../../libs/feature-example"

@@ -1,5 +1,5 @@
 {
-  "name": "@pluto-feature/example",
+  "name": "@pluto-feature/welcome",
   "version": "0.1.0",
   "private": true,
   "exports": {
