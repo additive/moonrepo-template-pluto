@@ -48,6 +48,9 @@ importers:
       '@fortawesome/fontawesome-svg-core':
         specifier: ^7.1.0
         version: 7.1.0
+      '@fortawesome/free-regular-svg-icons':
+        specifier: ^7.1.0
+        version: 7.1.0
       angular-router-menus:
         specifier: ^21.0.2
         version: 21.0.2(@angular/core@21.0.6(@angular/compiler@21.0.6)(rxjs@7.8.2))(@angular/router@21.0.6(@angular/common@21.0.6(@angular/core@21.0.6(@angular/compiler@21.0.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.6(@angular/compiler@21.0.6)(rxjs@7.8.2))(@angular/platform-browser@21.0.6(@angular/common@21.0.6(@angular/core@21.0.6(@angular/compiler@21.0.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.6(@angular/compiler@21.0.6)(rxjs@7.8.2)))(rxjs@7.8.2))
@@ -186,6 +189,37 @@ importers:
         version: 4.0.16(@types/node@24.10.4)(jiti@2.6.1)(jsdom@27.4.0)(sass@1.93.2)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2)
 
   apps/pluto:
+    dependencies:
+      '@pluto-feature/example':
+        specifier: workspace:*
+        version: link:../../libs/feature-example
+      '@pluto-feature/not-found':
+        specifier: workspace:*
+        version: link:../../libs/feature-not-found
+      '@pluto/assets':
+        specifier: workspace:*
+        version: link:../../libs/app-assets
+      '@pluto/build':
+        specifier: workspace:*
+        version: link:../../libs/app-build
+      '@pluto/config':
+        specifier: workspace:*
+        version: link:../../libs/app-config
+      '@pluto/environment':
+        specifier: workspace:*
+        version: link:../../libs/app-environment
+      '@pluto/layout':
+        specifier: workspace:*
+        version: link:../../libs/app-layout
+      '@pluto/moon-project':
+        specifier: workspace:*
+        version: link:../../libs/moon-project
+      '@pluto/theme':
+        specifier: workspace:*
+        version: link:../../libs/app-theme
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../../libs/types
     devDependencies:
       typescript:
         specifier: 5.9.3
@@ -194,25 +228,69 @@ importers:
   libs/app-assets: {}
 
   libs/app-build:
+    dependencies:
+      '@pluto/moon-project':
+        specifier: workspace:*
+        version: link:../moon-project
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../types
     devDependencies:
       esbuild:
         specifier: ^0.27.2
         version: 0.27.2
 
-  libs/app-config: {}
+  libs/app-config:
+    dependencies:
+      '@pluto/environment':
+        specifier: workspace:*
+        version: link:../app-environment
+      '@pluto/http':
+        specifier: workspace:*
+        version: link:../app-http
+      '@pluto/moon-project':
+        specifier: workspace:*
+        version: link:../moon-project
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../types
+      '@pluto/ui-icons':
+        specifier: workspace:*
+        version: link:../ui-icons
 
   libs/app-environment: {}
 
-  libs/app-http: {}
+  libs/app-http:
+    dependencies:
+      '@pluto/environment':
+        specifier: workspace:*
+        version: link:../app-environment
 
-  libs/app-layout: {}
+  libs/app-layout:
+    dependencies:
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../types
 
   libs/app-theme: {}
 
-  libs/feature-not-found: {}
+  libs/feature-example:
+    dependencies:
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../types
+
+  libs/feature-not-found:
+    dependencies:
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../types
 
   libs/moon-project:
     dependencies:
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../types
       yaml:
         specifier: ^2.8.2
         version: 2.8.2
@@ -228,7 +306,11 @@ importers:
 
   libs/types: {}
 
-  libs/utils: {}
+  libs/ui-icons:
+    dependencies:
+      '@pluto/types':
+        specifier: workspace:*
+        version: link:../types
 
 packages:
 
@@ -1304,6 +1386,10 @@ packages:
 
   '@fortawesome/fontawesome-svg-core@7.1.0':
     resolution: {integrity: sha512-fNxRUk1KhjSbnbuBxlWSnBLKLBNun52ZBTcs22H/xEEzM6Ap81ZFTQ4bZBxVQGQgVY0xugKGoRcCbaKjLQ3XZA==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/free-regular-svg-icons@7.1.0':
+    resolution: {integrity: sha512-0e2fdEyB4AR+e6kU4yxwA/MonnYcw/CsMEP9lH82ORFi9svA6/RhDyhxIv5mlJaldmaHLLYVTb+3iEr+PDSZuQ==}
     engines: {node: '>=6'}
 
   '@humanfs/core@0.19.1':
@@ -6111,6 +6197,10 @@ snapshots:
   '@fortawesome/fontawesome-common-types@7.1.0': {}
 
   '@fortawesome/fontawesome-svg-core@7.1.0':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 7.1.0
+
+  '@fortawesome/free-regular-svg-icons@7.1.0':
     dependencies:
       '@fortawesome/fontawesome-common-types': 7.1.0
 

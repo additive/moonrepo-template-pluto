@@ -12,3 +12,4 @@ dependsOn:
   - app-http
   - moon-project
   - types
+  - ui-icons

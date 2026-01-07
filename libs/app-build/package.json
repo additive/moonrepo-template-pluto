@@ -9,6 +9,8 @@
     "./plugin-define": "./src/plugin-define.ts"
   },
   "dependencies": {
+    "@pluto/moon-project": "workspace:*",
+    "@pluto/types": "workspace:*"
   },
   "devDependencies": {
     "esbuild": "^0.27.2"

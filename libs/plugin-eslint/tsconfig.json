@@ -4,8 +4,7 @@
     "baseUrl": ".",
     "allowJs": true,
     "outDir": "../../.moon/cache/types/libs/plugin-eslint",
-    "paths": {
-    }
+    "paths": {}
   },
   "files": [],
   "include": [],

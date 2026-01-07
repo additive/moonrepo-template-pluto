@@ -4,11 +4,15 @@
     "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/app-layout",
     "paths": {
+      "@pluto/types/*": ["../types/src/*"]
     }
   },
   "files": [],
   "include": [],
   "references": [
+    {
+      "path": "../types"
+    },
     {
       "path": "tsconfig.editor.json"
     },

@@ -4,11 +4,20 @@
     "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/app-build",
     "paths": {
+      "@pluto/moon-project": ["../moon-project/src/index.ts"],
+      "@pluto/moon-project/*": ["../moon-project/src/*"],
+      "@pluto/types/*": ["../types/src/*"]
     }
   },
   "files": [],
   "include": [],
   "references": [
+    {
+      "path": "../moon-project"
+    },
+    {
+      "path": "../types"
+    },
     {
       "path": "tsconfig.editor.json"
     },

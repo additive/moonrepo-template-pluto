@@ -7,6 +7,7 @@ import {
 
 import { provideHttp } from '@pluto/http/provide-http'
 import { provideMoonProject } from '@pluto/moon-project'
+import { provideIcons } from '@pluto/ui-icons/provide-icons'
 
 import { provideCore } from './provide-core'
 

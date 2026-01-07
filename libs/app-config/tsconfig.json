@@ -4,11 +4,33 @@
     "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/app-config",
     "paths": {
+      "@pluto/environment": ["../app-environment/src/index.ts"],
+      "@pluto/environment/*": ["../app-environment/src/*"],
+      "@pluto/http/*": ["../app-http/src/*"],
+      "@pluto/moon-project": ["../moon-project/src/index.ts"],
+      "@pluto/moon-project/*": ["../moon-project/src/*"],
+      "@pluto/types/*": ["../types/src/*"],
+      "@pluto/ui-icons/*": ["../ui-icons/src/*"]
     }
   },
   "files": [],
   "include": [],
   "references": [
+    {
+      "path": "../app-environment"
+    },
+    {
+      "path": "../app-http"
+    },
+    {
+      "path": "../moon-project"
+    },
+    {
+      "path": "../types"
+    },
+    {
+      "path": "../ui-icons"
+    },
     {
       "path": "tsconfig.editor.json"
     },

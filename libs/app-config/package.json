@@ -8,5 +8,10 @@
     "./*": "./src/*.js"
   },
   "dependencies": {
+    "@pluto/environment": "workspace:*",
+    "@pluto/http": "workspace:*",
+    "@pluto/moon-project": "workspace:*",
+    "@pluto/types": "workspace:*",
+    "@pluto/ui-icons": "workspace:*"
   }
 }

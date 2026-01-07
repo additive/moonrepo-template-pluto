@@ -11,6 +11,15 @@ project:
   description: '...'
   channel: '#xxxxxxx'
   metadata:
-    yourValueHere: "Hey"
+    yourValueHere: 'Hey'
 dependsOn:
-  - app-core
+  - app-assets
+  - app-build
+  - app-config
+  - app-environment
+  - app-layout
+  - app-theme
+  - feature-example
+  - feature-not-found
+  - moon-project
+  - types

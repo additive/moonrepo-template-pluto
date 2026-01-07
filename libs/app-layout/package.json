@@ -7,5 +7,7 @@
     ".": "./src/index.js",
     "./*": "./src/*.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@pluto/types": "workspace:*"
+  }
 }

@@ -4,11 +4,15 @@
     "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/feature-not-found",
     "paths": {
+      "@pluto/types/*": ["../types/src/*"]
     }
   },
   "files": [],
   "include": [],
   "references": [
+    {
+      "path": "../types"
+    },
     {
       "path": "tsconfig.editor.json"
     },

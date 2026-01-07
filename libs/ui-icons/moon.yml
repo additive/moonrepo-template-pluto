@@ -1,0 +1,13 @@
+id: 'ui-icons'
+layer: 'library'
+language: 'typescript'
+stack: 'frontend'
+tags:
+  - ui
+  - component
+  - styles
+project:
+  name: 'UI Icons'
+  description: 'Icons setup and configuration'
+dependsOn:
+  - types

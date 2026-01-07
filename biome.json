@@ -143,6 +143,9 @@
           },
           "security": {
             "noSecrets": "off"
+          },
+          "suspicious": {
+            "noConsole": "warn"
           }
         }
       }

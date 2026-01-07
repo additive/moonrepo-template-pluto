@@ -18,6 +18,7 @@
     "node:path": false
   },
   "dependencies": {
+    "@pluto/types": "workspace:*",
     "yaml": "^2.8.2"
   },
   "devDependencies": {

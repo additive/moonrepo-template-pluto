@@ -4,11 +4,54 @@
     "baseUrl": ".",
     "outDir": "../../.moon/cache/types/apps/pluto",
     "paths": {
+      "@pluto-feature/example/*": ["../../libs/feature-example/src/*"],
+      "@pluto-feature/not-found/*": ["../../libs/feature-not-found/src/*"],
+      "@pluto/assets/*": ["../../libs/app-assets/*"],
+      "@pluto/build/*": ["../../libs/app-build/src/*"],
+      "@pluto/config": ["../../libs/app-config/src/index.ts"],
+      "@pluto/config/*": ["../../libs/app-config/src/*"],
+      "@pluto/environment": ["../../libs/app-environment/src/index.ts"],
+      "@pluto/environment/*": ["../../libs/app-environment/src/*"],
+      "@pluto/layout/*": ["../../libs/app-layout/src/*"],
+      "@pluto/moon-project": ["../../libs/moon-project/src/index.ts"],
+      "@pluto/moon-project/*": ["../../libs/moon-project/src/*"],
+      "@pluto/theme/*": ["../../libs/app-theme/*"],
+      "@pluto/types/*": ["../../libs/types/src/*"]
     }
   },
   "files": [],
   "include": [],
   "references": [
+    {
+      "path": "../../libs/app-assets"
+    },
+    {
+      "path": "../../libs/app-build"
+    },
+    {
+      "path": "../../libs/app-config"
+    },
+    {
+      "path": "../../libs/app-environment"
+    },
+    {
+      "path": "../../libs/app-layout"
+    },
+    {
+      "path": "../../libs/app-theme"
+    },
+    {
+      "path": "../../libs/feature-example"
+    },
+    {
+      "path": "../../libs/feature-not-found"
+    },
+    {
+      "path": "../../libs/moon-project"
+    },
+    {
+      "path": "../../libs/types"
+    },
     {
       "path": "tsconfig.app.json"
     },
