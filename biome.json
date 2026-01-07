@@ -145,7 +145,7 @@
             "noSecrets": "off"
           },
           "suspicious": {
-            "noConsole": "warn"
+            "noConsole": "off"
           }
         }
       }
