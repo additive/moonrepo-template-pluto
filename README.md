@@ -48,3 +48,7 @@ Read more about our custom solutions here: https://www.additive-net.de/de/soluti
 - moon-project: Custom plugin to get access to `moon.yml` configuration inside the application and other build steps or in scripts
 - plugin-eslint: Base configuration for eslint setup, super useful to not have redundant configuration like NX does it
 - types: Global TypeScript types and resets for any lib and app
+
+## AI
+
+We are using a local LLM model for our project together with `opencode`. Claude is just used here so I can easily port our parts into this project together with tailwind. This way we also benefit from improvements from Claude here ^^.

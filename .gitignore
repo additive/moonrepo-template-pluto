@@ -8,6 +8,7 @@ CHANGELOG.latest.md
 .moon/cache
 .moon/docker
 apps/*/certs
+.claude/settings.local.json
 
 # Compiled
 **/abstracts
