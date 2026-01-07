@@ -1,0 +1,9 @@
+just = "1.46.0"
+moon = "1.41.8"
+node = "24.12.0"
+pnpm = "10.27.0"
+yq = "4.50.1"
+
+[plugins.tools]
+just = "https://raw.githubusercontent.com/Phault/proto-toml-plugins/main/just/plugin.toml"
+yq = "https://raw.githubusercontent.com/appthrust/proto-toml-plugins/main/yq/plugin.toml"

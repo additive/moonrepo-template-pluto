@@ -1,0 +1,17 @@
+---
+force: true
+---
+id: 'feature-{{ name }}'
+layer: 'library'
+language: 'typescript'
+stack: 'frontend'
+tags:
+  - styles
+project:
+  name: 'Feature {{ name | title }}'
+  description: '{{ desc }}'
+dependsOn:
+  - app-core
+  - types
+  - ui-components
+  - ui-blocks

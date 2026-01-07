@@ -1,0 +1,33 @@
+{
+  "recommendations": [
+    "Angular.ng-template",
+    "bierner.github-markdown-preview",
+    "biomejs.biome",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "ghaschel.vscode-angular-html",
+    "Gruntfuggly.todo-tree",
+    "kokakiwi.vscode-just",
+    "mikestead.dotenv",
+    "moonrepo.moon-console",
+    "ms-azuretools.vscode-docker",
+    "nhoizey.gremlins",
+    "pomdtr.excalidraw-editor",
+    "redhat.vscode-xml",
+    "redhat.vscode-yaml",
+    "streetsidesoftware.code-spell-checker-german",
+    "streetsidesoftware.code-spell-checker",
+    "stylelint.vscode-stylelint",
+    "usernamehw.errorlens",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "YoavBls.pretty-ts-errors",
+    "yzhang.markdown-all-in-one",
+    "foxundermoon.shell-format",
+    "karunamurti.tera",
+    "bradlc.vscode-tailwindcss",
+    "arktypeio.arkdark",
+    "tamasfe.even-better-toml"
+  ]
+}

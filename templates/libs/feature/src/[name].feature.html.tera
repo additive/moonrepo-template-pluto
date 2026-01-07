@@ -1,0 +1,6 @@
+<app-container>
+	<app-title>
+		<fa-icon icon="gopuram" />
+		{{ name }}
+	</app-title>
+</app-container>

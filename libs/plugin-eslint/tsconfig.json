@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "allowJs": true,
+    "outDir": "../../.moon/cache/types/libs/plugin-eslint",
+    "paths": {
+    }
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "tsconfig.editor.json"
+    },
+    {
+      "path": "tsconfig.lib.json"
+    },
+    {
+      "path": "tsconfig.spec.json"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+id: 'pluto'
+layer: 'application'
+language: 'typescript'
+stack: 'frontend'
+tags:
+  - app
+  - tests
+  - styles
+project:
+  name: 'Pluto'
+  description: '...'
+  channel: '#xxxxxxx'
+  metadata:
+    yourValueHere: "Hey"
+dependsOn:
+  - app-core

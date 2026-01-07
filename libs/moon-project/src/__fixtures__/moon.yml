@@ -1,0 +1,6 @@
+project:
+  name: 'name'
+  description: 'description'
+  channel: '#channel'
+  metadata:
+    yourValueHere: 'Some'

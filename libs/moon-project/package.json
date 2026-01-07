@@ -1,0 +1,27 @@
+{
+  "name": "@pluto/moon-project",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.js",
+  "types": "./src/types.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./esbuild-plugin": "./src/esbuild-plugin.ts",
+    "./*": "./src/*.js",
+    ".": {
+      "types": "./src/types.d.ts",
+      "node": "./src/index.js"
+    }
+  },
+  "browser": {
+    "node:fs": false,
+    "node:path": false
+  },
+  "dependencies": {
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@moonrepo/types": "^1.33.3",
+    "esbuild": "^0.27.2"
+  }
+}

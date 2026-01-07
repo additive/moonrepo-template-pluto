@@ -1,0 +1,49 @@
+.env*
+!.env.example
+.eslintcache
+.stylelintcache
+CHANGELOG.latest.md
+.angular
+.proto
+.moon/cache
+.moon/docker
+apps/*/certs
+
+# Compiled
+**/abstracts
+**/results
+**/dist
+**/tmp
+**/out-tsc
+**/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Misc
+/.angular/cache
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+.DS_Store
+Thumbs.db
+*.tsbuildinfo

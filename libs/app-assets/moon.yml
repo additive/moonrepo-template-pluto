@@ -1,0 +1,18 @@
+id: 'app-assets'
+layer: 'configuration'
+language: 'unknown'
+stack: 'frontend'
+tags:
+  - core
+  - resources
+  - assets
+project:
+  name: 'Assets'
+  description: 'Primary assets like images and template files'
+workspace:
+  inheritedTasks:
+    exclude: ['test', 'lint', 'format']
+# tasks:
+#   generator-pwa-assets:
+#     description: 'Generate PWA assets'
+#     command: 'assets-generator --preset minimal-2023 --manifest "assets/pwa/source.png"'

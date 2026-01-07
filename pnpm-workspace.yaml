@@ -1,0 +1,13 @@
+packages:
+  - apps/*
+  - libs/*
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - lmdb
+  - msgpackr-extract
+
+overrides:
+  semver: latest
+  uuid: latest

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/@biomejs/biome/configuration_schema.json",
+  "root": false,
+  "extends": "//",
+  "javascript": {
+    "globals": ["MOON_PROJECT_JSON"]
+  },
+  "linter": {
+    "rules": {
+      "correctness": {
+        "noNodejsModules": "off"
+      }
+    }
+  }
+}

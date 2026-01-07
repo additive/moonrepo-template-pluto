@@ -1,0 +1,13 @@
+{
+	email net-admin@example.org
+	admin off
+	auto_https ignore_loaded_certs
+}
+
+pluto.local {
+	root * /srv/app/pluto
+	encode zstd gzip
+	try_files {path} /index.html
+	tls /etc/caddy/certs/dev.cert /etc/caddy/certs/dev-key.cert
+	file_server
+}

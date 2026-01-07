@@ -1,0 +1,9 @@
+id: 'app-environment'
+layer: 'library'
+language: 'typescript'
+stack: 'frontend'
+tags:
+  - core
+project:
+  name: 'Environment'
+  description: 'Main Environment for any application'

@@ -1,0 +1,12 @@
+id: 'app-build'
+layer: 'library'
+language: 'typescript'
+stack: 'frontend'
+tags:
+  - core
+project:
+  name: 'App Build'
+  description: 'Build utilities, plugins and transformers'
+dependsOn:
+  - moon-project
+  - types

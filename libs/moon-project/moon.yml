@@ -1,0 +1,9 @@
+id: 'moon-project'
+layer: 'library'
+language: 'typescript'
+stack: 'frontend'
+project:
+  name: 'Moon Project'
+  description: 'Moon project apps configuration typed and ready to use in application code'
+dependsOn:
+  - types

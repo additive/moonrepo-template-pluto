@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../.moon/cache/types/apps/pluto",
+    "paths": {
+    }
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "tsconfig.app.json"
+    },
+    {
+      "path": "tsconfig.editor.json"
+    },
+    {
+      "path": "tsconfig.spec.json"
+    },
+    {
+      "path": "tsconfig.worker.json"
+    }
+  ]
+}

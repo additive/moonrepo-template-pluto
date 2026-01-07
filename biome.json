@@ -1,0 +1,170 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "root": true,
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**/*.js",
+      "**/*.mjs",
+      "**/*.ts",
+      "!**/*generated*",
+      "!.moon",
+      "!.git",
+      "!.angular",
+      "!.cache",
+      "!node_modules",
+      "!dist",
+      "!tmp"
+    ]
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "useSortedKeys": "off",
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":URL:",
+              ":NODE:",
+              [":PACKAGE:", "!@pluto/**", "!@pluto-feature/**"],
+              ":PACKAGE_WITH_PROTOCOL:",
+              ":BLANK_LINE:",
+              ["@pluto/**"],
+              ":BLANK_LINE:",
+              ["@pluto-feature/**"],
+              ":BLANK_LINE:",
+              ":ALIAS:",
+              ":BLANK_LINE:",
+              ":PATH:"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "lineWidth": 94
+  },
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "project": "none",
+      "next": "none",
+      "react": "none",
+      "solid": "none",
+      "test": "none",
+      "vue": "none"
+    },
+    "rules": {
+      "recommended": true,
+      "a11y": "error",
+      "nursery": {
+        "recommended": true,
+        "noUnresolvedImports": "off"
+      },
+      "performance": "error",
+      "security": "error",
+      "style": "error",
+      "correctness": "error",
+      "complexity": "error",
+      "suspicious": "error"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single"
+    },
+    "globals": ["BUILD_ENV", "BUILD_DATE", "APP_VERSION", "APP_HASH", "NONCE"]
+  },
+  "css": {
+    "formatter": {
+      "enabled": true
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": false
+    }
+  },
+  "html": {
+    "formatter": {
+      "enabled": false
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": {
+              "level": "warn",
+              "fix": "safe"
+            },
+            "useHookAtTopLevel": "off",
+            "noUndeclaredDependencies": "off",
+            "useImportExtensions": "off"
+          },
+          "style": {
+            "noDefaultExport": "off",
+            "useNamingConvention": "off",
+            "noMagicNumbers": "off",
+            "useExportsLast": "off",
+            "useConsistentTypeDefinitions": {
+              "level": "error",
+              "options": {
+                "style": "type"
+              }
+            }
+          },
+          "complexity": {
+            "noVoid": "off",
+            "noExcessiveLinesPerFunction": {
+              "level": "error",
+              "options": {
+                "skipBlankLines": true,
+                "maxLines": 70
+              }
+            }
+          },
+          "security": {
+            "noSecrets": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.js", "**/*.mjs"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noNodejsModules": "off"
+          },
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.spec.ts"],
+      "javascript": {
+        "globals": ["describe", "beforeEach", "it", "expect"]
+      }
+    }
+  ]
+}

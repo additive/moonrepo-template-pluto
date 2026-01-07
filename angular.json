@@ -1,0 +1,123 @@
+{
+  "$schema": "./node_modules/angular-extended-builder/dist/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "pnpm",
+    "analytics": false
+  },
+  "projects": {
+    "pluto": {
+      "root": "./apps/pluto",
+      "sourceRoot": "./apps/pluto/src",
+      "projectType": "application",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "angular-extended-builder:application",
+          "options": {
+            "browser": "./apps/pluto/src/bootstrap.ts",
+            "index": "./apps/pluto/node_modules/@pluto/build/index.html",
+            "outputPath": "./apps/pluto/dist",
+            "tsConfig": "./apps/pluto/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "crossOrigin": "anonymous",
+            "webWorkerTsConfig": "./apps/pluto/tsconfig.worker.json",
+            "polyfills": ["@pluto/build/polyfills"],
+            "styles": [
+              "./apps/pluto/node_modules/@pluto/theme/main.scss",
+              "./apps/pluto/src/theme.scss"
+            ],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "./apps/pluto/node_modules/@pluto/assets/assets",
+                "output": "/assets/"
+              },
+              "./apps/pluto/src/manifest.webmanifest",
+              "./apps/pluto/src/robots.txt"
+            ],
+            "indexHtmlTransformer": "@pluto/build/index-html-transform",
+            "plugins": [
+              "@pluto/build/plugin-define",
+              "@pluto/moon-project/esbuild-plugin"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "subresourceIntegrity": true,
+              "outputHashing": "all",
+              "namedChunks": false,
+              "sourceMap": {
+                "scripts": true,
+                "styles": false,
+                "hidden": true
+              },
+              "fileReplacements": [
+                {
+                  "replace": "./apps/pluto/src/environments/environment.ts",
+                  "with": "./apps/pluto/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "sourceMap": true,
+              "extractLicenses": false,
+              "optimization": false,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "angular-extended-builder:dev-server",
+          "configurations": {
+            "development": {
+              "buildTarget": "pluto:build:development",
+              "ssl": true
+            }
+          },
+          "options": {
+            "sslKey": "./certs/dev-key.crt",
+            "sslCert": "./certs/dev.crt"
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "buildTarget": "pluto:build:development",
+            "runner": "vitest",
+            "tsConfig": "./apps/pluto/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
+  }
+}

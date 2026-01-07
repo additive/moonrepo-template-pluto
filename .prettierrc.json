@@ -1,0 +1,17 @@
+{
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "parser": "angular"
+      }
+    },
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "singleQuote": true,
+        "proseWrap": "preserve"
+      }
+    }
+  ]
+}

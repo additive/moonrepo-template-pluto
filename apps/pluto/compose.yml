@@ -1,0 +1,12 @@
+services:
+  app:
+    image: caddy
+    container_name: pluto-app
+    ports:
+      - '80:80'
+      - '443:443'
+      - '443:443/udp'
+    volumes:
+      - ./dist/browser:/srv/app/pluto:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./certs:/etc/caddy/certs:ro

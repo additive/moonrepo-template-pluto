@@ -1,0 +1,16 @@
+{
+  "name": "@pluto/build",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": "./src/*.js",
+    "./index-html-transform": "./src/index-html-transform.ts",
+    "./plugin-define": "./src/plugin-define.ts"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.2"
+  }
+}

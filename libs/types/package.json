@@ -1,0 +1,16 @@
+{
+  "name": "@pluto/types",
+  "version": "0.1.0",
+  "private": true,
+  "types": "./src/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./src/index.d.ts"
+    },
+    "./*": {
+      "types": "./src/*.d.ts",
+      "default": "./src/*.js"
+    }
+  }
+}

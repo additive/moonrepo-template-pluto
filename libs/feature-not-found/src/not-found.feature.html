@@ -1,0 +1,11 @@
+<h1>404</h1>
+
+<h2>Die Seite, die Sie gesucht haben, konnte nicht gefunden werden</h2>
+
+@if (referrer) {
+	<h4>
+		<code>{{ referrer }}</code>
+	</h4>
+}
+
+<button (click)="goBackToRef()">Zurück zur vorherigen Seite</button>

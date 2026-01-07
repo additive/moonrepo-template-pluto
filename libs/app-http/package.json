@@ -1,0 +1,14 @@
+{
+  "name": "@pluto/http",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": "./src/*.js",
+    ".": {
+      "types": "./src/index.d.ts"
+    }
+  },
+  "dependencies": {
+  }
+}

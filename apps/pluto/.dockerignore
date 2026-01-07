@@ -1,0 +1,9 @@
+.*
+.*/
+config.*
+*.ya?ml
+*.json
+node_modules/
+certs/
+scripts/
+src/

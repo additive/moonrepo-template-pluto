@@ -1,0 +1,11 @@
+{
+  "name": "@pluto-feature/not-found",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.js",
+    "./*": "./src/*.js"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "../../node_modules/angular-extended-builder/dist/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "pnpm",
+    "analytics": false
+  },
+  "projects": {
+    "lib": {
+      "root": ".",
+      "sourceRoot": "./src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "tsConfig": "tsconfig.lib.json"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "buildTarget": ":build",
+            "runner": "vitest",
+            "tsConfig": "tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  }
+}

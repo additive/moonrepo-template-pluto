@@ -1,0 +1,14 @@
+id: 'app-config'
+layer: 'library'
+language: 'typescript'
+stack: 'frontend'
+tags:
+  - core
+project:
+  name: 'App Config'
+  description: 'Angular app configuration that is shared'
+dependsOn:
+  - app-environment
+  - app-http
+  - moon-project
+  - types

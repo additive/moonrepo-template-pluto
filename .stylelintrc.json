@@ -1,0 +1,33 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order"],
+  "rules": {
+    "no-empty-source": null,
+    "declaration-property-value-no-unknown": true,
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": [
+          "/^app-/",
+          "/^fa-/",
+          "/^ng-/"
+        ]
+      }
+    ],
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["ng-deep"]
+      }
+    ],
+    "property-disallowed-list": [
+      "padding-left",
+      "padding-right",
+      "padding-top",
+      "padding-bottom",
+      "margin-left",
+      "margin-right",
+      "margin-top",
+      "margin-bottom"
+    ]
+  }
+}

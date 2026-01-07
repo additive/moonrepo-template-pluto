@@ -1,0 +1,72 @@
+$schema: 'https://moonrepo.dev/schemas/tasks.json'
+
+fileGroups:
+  app:
+    - 'src/**/*.{ts,html}'
+    - '/angular.json'
+
+tasks:
+
+  # Development
+
+  dev:
+    command: 'ng serve'
+    preset: 'watcher'
+    env:
+      NODE_ENV: 'development'
+    deps:
+      - target: 'generator-dev-certs'
+        env:
+          HOST: 'pluto-host.local'
+
+  # Building
+
+  build:
+    description: 'Builds the app in production mode'
+    command: 'ng build'
+    env:
+      NODE_ENV: 'production'
+    options:
+      cache: false
+    inputs:
+      - '@group(app)'
+      - '@group(sources)'
+      - '@group(styles)'
+      - '@group(assets)'
+    outputs:
+      - 'dist/browser/'
+
+  build-dev:
+    description: 'Builds the app in development mode'
+    extends: 'build'
+    args: '-c development'
+    env:
+      NODE_ENV: 'development'
+
+  # Special build phases
+
+  build-analyse:
+    description: 'Builds the app for analysis'
+    extends: 'build'
+    args: '--stats-json'
+
+  build-pack:
+    description: 'Package a build for deployment to a server'
+    script: >
+      cp $projectRoot/dist/3rdpartylicenses.txt $projectRoot/dist/browser/assets/licenses.txt &&
+      cd $projectRoot/dist/ &&
+      zip -FSrq "$project.zip" browser
+    options:
+      cache: false
+
+  build-release:
+    description: 'Builds a deployable release with additional checks'
+    script: >
+      VERSION=$(yq -r '.version' $projectRoot/package.json)
+      cp "$projectRoot/dist/$project.zip"
+      "$projectRoot/dist/$project-v$VERSION-$date.zip"
+    deps:
+      - build
+      - build-pack
+    options:
+      runDepsInParallel: false

@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../.moon/cache/types/libs/app-layout",
+    "paths": {
+    }
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "tsconfig.editor.json"
+    },
+    {
+      "path": "tsconfig.lib.json"
+    },
+    {
+      "path": "tsconfig.spec.json"
+    }
+  ]
+}

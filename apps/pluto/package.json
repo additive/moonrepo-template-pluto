@@ -1,0 +1,10 @@
+{
+  "name": "@pluto/pluto",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

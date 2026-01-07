@@ -1,0 +1,141 @@
+# https://moonrepo.dev/docs/config/tasks
+$schema: 'https://moonrepo.dev/schemas/tasks.json'
+
+implicitInputs:
+  - 'moon.yml'
+  - 'package.json'
+
+fileGroups:
+  app: [] # relevant app build files
+  sources: # just source files
+    - 'src/**/*.{js,mjs,ts,html}'
+  templates: # just template files
+    - 'src/**/*.html'
+  styles: # just style files
+    - 'src/**/*.{css,scss}'
+  configs: # just config files
+    - '*.{json,yml,yaml,toml}'
+    # - '*.{js,mjs}' # Wildcard matches wont work
+    - '/tsconfig.base.json'
+    - '/tsconfig.json'
+  tests:
+    - '**/*.spec.*'
+    - '**/setup-test.ts'
+    - '**/__snapshots__/**/*'
+  assets:
+    - 'public/**/*'
+    - 'assets/**/*'
+    - 'images/**/*'
+    - 'static/**/*'
+    - '**/*.{md,mdx}'
+
+tasks:
+
+  # Verify's
+  # are overridden in other tasks
+
+  lint:
+    deps:
+      - run-eslint
+      - run-biome
+      - run-prettier
+
+  format:
+    options:
+      mergeArgs: append
+      runDepsInParallel: false
+    deps:
+      - target: 'run-eslint'
+        args: '--fix'
+      - target: 'run-biome'
+        args:
+          - '--write'
+          - '--unsafe'
+      - target: 'run-prettier'
+        args: '--write'
+
+  # Runner's
+
+  run-eslint:
+    command: 'eslint --cache --no-warn-ignored --no-error-on-unmatched-pattern'
+    options:
+      internal: true
+      affectedFiles: 'args'
+      affectedPassInputs: true
+    args:
+      - '@files(app)'
+      - '@files(sources)'
+    inputs:
+      - '**/eslint.config.mjs'
+      - '/libs/plugin-eslint/**/*.js'
+      - '@group(configs)'
+      - '@group(app)'
+      - '@group(sources)'
+
+  run-biome:
+    command: 'biome check --no-errors-on-unmatched'
+    options:
+      internal: true
+      affectedFiles: 'args'
+      affectedPassInputs: true
+    args:
+      - '@files(configs)'
+      - '@files(app)'
+      - '@files(sources)'
+    inputs:
+      - '/biome.json'
+      - '@group(configs)'
+      - '@group(app)'
+      - '@group(sources)'
+
+  run-prettier:
+    command: 'prettier --cache --no-error-on-unmatched-pattern --check'
+    options:
+      internal: true
+      affectedFiles: 'args'
+      affectedPassInputs: true
+    args:
+      - '@files(templates)'
+      - '@files(configs)'
+      - '@files(assets)'
+      - '@files(styles)'
+    inputs:
+      - '/.prettierignore'
+      - '/.prettierrc.json'
+      - '@group(templates)'
+      - '@group(configs)'
+      - '@group(assets)'
+      - '@group(styles)'
+
+  run-stylelint:
+    command: 'stylelint --cache --allow-empty-input --ignore-path @in(0) --ignore-path @in(1)'
+    options:
+      internal: true
+      affectedFiles: 'args'
+      affectedPassInputs: true
+    args:
+      - '@files(styles)'
+    inputs:
+      - '/.gitignore'
+      - '/.stylelintignore'
+      - '**/.stylelintrc.json'
+      - '@group(styles)'
+
+  # Common generators
+
+  # TODO: Add command that runs all generators in a project
+  # generators:
+  #   deps:
+  #     - '~:generator-*'
+
+  generator-dev-certs:
+    description: 'Generate development certificates'
+    script: >
+      mkdir -p certs/ &&
+      mkcert -ecdsa -cert-file certs/dev.crt -key-file certs/dev-key.crt \
+        pluto.local $HOST 127.0.0.1 localhost
+    outputs:
+      - '**/certs/**'
+    options:
+      internal: true
+      runInCI: false

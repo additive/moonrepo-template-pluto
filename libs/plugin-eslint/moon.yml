@@ -1,0 +1,7 @@
+id: 'plugin-eslint'
+layer: 'configuration'
+language: 'typescript'
+stack: 'infrastructure'
+project:
+  name: 'Plugin ESLint'
+  description: 'ESLint plugin for apps and other types'

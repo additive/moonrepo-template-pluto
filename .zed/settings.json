@@ -1,0 +1,66 @@
+{
+  "lsp": {
+    "angular": {
+      "initialization_options": {
+        "angular_language_service_version": "20.1.3",
+        "typescript_version": "5.8.2"
+      }
+    }
+  },
+  "languages": {
+    "TypeScript": {
+      "language_servers": [
+        "angular",
+        "!typescript-language-server",
+        "vtsls",
+        "eslint",
+        "biome"
+      ],
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+        "source.action.useSortedKeys.biome": true
+      },
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "JavaScript": {
+      "language_servers": ["typescript-language-server", "eslint", "biome"],
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+        "source.action.useSortedKeys.biome": true
+      },
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "HTML": {
+      "language_servers": ["angular", "eslint", "vscode-html-language-server"],
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "formatter": {
+        "external": {
+          "command": "./node_modules/.bin/prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "SCSS": {
+      "formatter": [
+        {
+          "external": {
+            "command": "./node_modules/.bin/stylelint",
+            "arguments": ["--stdin-filename", "{buffer_path}", "--fix"]
+          }
+        }
+      ]
+    }
+  }
+}

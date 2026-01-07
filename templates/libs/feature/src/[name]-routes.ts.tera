@@ -1,0 +1,10 @@
+import type { Routes } from '@angular/router'
+
+export default [
+	{
+		path: '',
+		title: '{{ name }}',
+		loadComponent: () => import('./{{ name | kebab_case }}.feature').then((m) => m.{{ name | pascal_case }}Feature),
+		menu: {},
+	},
+] satisfies Routes

@@ -1,0 +1,11 @@
+id: 'app-http'
+layer: 'library'
+language: 'typescript'
+stack: 'frontend'
+tags:
+  - core
+project:
+  name: 'App HTTP library'
+  description: 'All sort of HTTP handling, middlewares and stuff'
+dependsOn:
+  - app-environment
