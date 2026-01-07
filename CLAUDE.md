@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is **Pluto**, an Angular monorepo template using moonrepo for task orchestration. It's designed for creating customized multi-tenant applications with shared core structure.
+This is **Pluto** — an Angular Moonrepo Template powered by moonrepo for task orchestration. Built with a space-themed identity, it's designed for creating customized multi-tenant applications with shared core structure. The name celebrates the cosmic connection between Pluto and moonrepo!
 
 ## Commands
 
