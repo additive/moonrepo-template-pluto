@@ -18,13 +18,16 @@ import type { Observable } from 'rxjs'
 import { Language } from './language'
 import { TranslatedTitleStrategy } from './title-strategy'
 
-/** Loads `/locales/<lang>.json`, which the build copies from this lib's `locales/`. */
+/**
+ * Loads `locales/<lang>.json`, which the build copies from this lib's `locales/`. The
+ * path is relative so it follows the base href when the app runs under a subpath.
+ */
 @Injectable({ providedIn: 'root' })
 class LocaleLoader implements TranslocoLoader {
 	private readonly http = inject(HttpClient)
 
 	getTranslation(lang: string): Observable<Translation> {
-		return this.http.get<Translation>(`/locales/${lang}.json`)
+		return this.http.get<Translation>(`locales/${lang}.json`)
 	}
 }
 
