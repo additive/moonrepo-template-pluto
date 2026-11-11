@@ -53,6 +53,20 @@ Libraries are imported as `@pluto/*` and `@pluto-feature/*`. A project's depende
 are declared in its `moon.yml` `dependsOn`, the source of truth. moon writes them into
 `package.json` and every `tsconfig.json`. After editing `dependsOn`, run `just sync`.
 
+## Skills
+
+Step-by-step guides for recurring work live in `.agents/skills/<name>/SKILL.md`
+(`.claude/skills` links there). Read the matching one before you start:
+
+- `rename-template`: turn Pluto into the user's product
+- `create-feature`: a routed page with menu entry and translations
+- `add-ui-component`: a spartan/ui Helm component, generated and used
+- `add-translation`: text in every language
+- `create-library`: a shared library wired into moon, pnpm and TypeScript
+- `fetch-data`: `httpResource` reads, service writes, loading and error states
+
+When a convention changes, update the skill that teaches it in the same change.
+
 ## Conventions
 
 - **Angular**: standalone components, zoneless, signal inputs and outputs, `inject()`,

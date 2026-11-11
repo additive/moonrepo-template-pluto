@@ -14,6 +14,7 @@
   <a href="https://additive.github.io/moonrepo-template-pluto/">Live demo</a> •
   <a href="#whats-inside">What's inside</a> •
   <a href="#quick-start">Quick start</a> •
+  <a href="#start-with-your-agent">Start with your agent</a> •
   <a href="#architecture">Architecture</a> •
   <a href="#ai-assisted">AI assisted</a>
 </p>
@@ -47,7 +48,8 @@ conventions and tools for all of them.
 - **Safe dependencies.** Packages install through Socket Firewall, fresh releases wait three
   days before pnpm takes them, and gitleaks scans every commit for secrets.
 - **Ready for AI agents.** `AGENTS.md` gives coding agents the same conventions a new
-  developer gets.
+  developer gets, and six skills teach them how to rename the template, add pages, UI,
+  translations, libraries and data fetching the way this repo does it.
 
 ## What's inside
 
@@ -84,6 +86,37 @@ moon run pluto:build
 
 Run `just` on its own to list every recipe. To add a feature library with a routed page,
 run `moon generate feature`.
+
+## Start with your agent
+
+Working with Claude Code, Codex, Cursor or opencode? Clone the template, open your agent in
+the folder and give it this:
+
+```text
+This is a fresh copy of the Pluto Angular moonrepo template. Read AGENTS.md first, it holds
+the conventions for this repository.
+
+1. Run `just setup`, then `just lint`, `just test` and `moon run pluto:build`, and tell me
+   if anything fails.
+2. Use the rename-template skill to rename the template to my product. Ask me for the app
+   name, the display name and the import scope before changing anything, and whether to
+   keep the welcome and example pages.
+3. Run the checks again and summarize what you changed.
+```
+
+After that, describe what you want to build. The agent finds the skills that go with it:
+
+| Skill              | Teaches the agent to                                            |
+| ------------------ | --------------------------------------------------------------- |
+| `rename-template`  | turn Pluto into your product, names, aliases and all            |
+| `create-feature`   | add a routed page with its menu entry and translations          |
+| `add-ui-component` | add a spartan/ui component and use it the way this repo does    |
+| `add-translation`  | add text in every language, with the right key and check        |
+| `create-library`   | add a shared library and wire it into moon, pnpm and TypeScript |
+| `fetch-data`       | load and send data with `httpResource`, typed and with states   |
+
+The skills live in `.agents/skills`, readable by any agent. Claude Code picks them up
+through the `.claude/skills` link.
 
 ## Architecture
 
