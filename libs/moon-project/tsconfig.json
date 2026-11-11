@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/moon-project",
     "paths": {
       "@pluto/types/*": ["../types/src/*"]

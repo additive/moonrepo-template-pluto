@@ -1,15 +1,15 @@
-id: 'app-config'
-layer: 'library'
-language: 'typescript'
-stack: 'frontend'
+id: app-config
+layer: library
+language: typescript
+stack: frontend
 tags:
   - core
 project:
-  name: 'App Config'
-  description: 'Angular app configuration that is shared'
+  description: Angular app configuration that is shared
+  title: App Config
 dependsOn:
   - app-environment
   - app-http
   - moon-project
   - types
-  - ui-icons
+  - app-i18n

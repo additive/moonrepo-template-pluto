@@ -1,7 +1,5 @@
-/** biome-ignore-all lint/complexity/noExcessiveLinesPerFunction: purpose */
-
-import process from 'node:process'
 import { minify } from 'html-minifier-terser'
+import process from 'node:process'
 
 import { getMoonConfig } from '@pluto/moon-project/moon'
 
@@ -17,7 +15,7 @@ export default function indexTransformer(compiledHtml = '') {
 	}
 
 	html = html.replaceAll('{nonce}', NONCE)
-	html = html.replaceAll('{name}', moonProject.name)
+	html = html.replaceAll('{name}', moonProject.title)
 	html = html.replaceAll('{description}', moonProject.description)
 
 	// CSP configuration - kept loose for this example repository

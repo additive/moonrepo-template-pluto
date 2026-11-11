@@ -20,13 +20,13 @@ for tsconfig_file in $tsconfig_files; do
 		yq -i '
 ( select(.compilerOptions | has("paths")) | .compilerOptions.paths) |= sort_keys(.) |
 ( select(has("references")) | .references) |= sort_by(.path)
-		' $tsconfig_file
+		' "$tsconfig_file"
 	) &
 done
 
 wait
 
-prettier --write --log-level=silent $tsconfig_files
+echo "$tsconfig_files" | xargs oxfmt
 
 # NPM Packages
 echo "NPM Packages"
@@ -47,13 +47,13 @@ for package_file in $package_files; do
 ( select(has("devDependencies")) | .devDependencies ) |= sort_keys(.) |
 ( select(has("peerDependencies")) | .peerDependencies ) |= sort_keys(.) |
 ( select(has("optionalDependencies")) | .optionalDependencies ) |= sort_keys(.)
-		' $package_file
+		' "$package_file"
 	) &
 done
 
 wait
 
-prettier --write --log-level=silent $package_files
+echo "$package_files" | xargs oxfmt
 
 # Moon Configs
 echo "Moon Configs"
@@ -69,10 +69,10 @@ for moon_file in $moon_files; do
 	echo "Reordering paths in $moon_file"
 
 	(
-		yq -i '( select(has("dependsOn")) | .dependsOn ) |= sort' $moon_file
+		yq -i '( select(has("dependsOn")) | .dependsOn ) |= sort' "$moon_file"
 	) &
 done
 
 wait
 
-prettier --write --log-level=silent $moon_files
+echo "$moon_files" | xargs oxfmt

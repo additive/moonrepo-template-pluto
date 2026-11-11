@@ -1,0 +1,62 @@
+<header class="py-8">
+	<h1 class="text-3xl font-bold">{{ "feature.example.title" | transloco }}</h1>
+	<p class="mt-2 text-muted-foreground">{{ "feature.example.subtitle" | transloco }}</p>
+</header>
+
+<div class="space-y-8 pb-16">
+	<section hlmCard>
+		<div hlmCardHeader>
+			<h2 hlmCardTitle>{{ "feature.example.posts.title" | transloco }}</h2>
+			<p hlmCardDescription>
+				{{ "feature.example.posts.text" | transloco }}
+				<code class="font-mono text-foreground">httpResource()</code>
+			</p>
+		</div>
+
+		<div hlmCardContent class="space-y-3">
+			@if (posts.isLoading()) {
+				@for (_ of skeletons; track $index) {
+					<hlm-skeleton class="h-16 w-full" />
+				}
+			} @else if (posts.error()) {
+				<p class="text-destructive">{{ "feature.example.posts.error" | transloco }}</p>
+			} @else if (posts.hasValue()) {
+				@for (post of posts.value(); track post.id) {
+					<article class="rounded-lg border border-border p-4">
+						<h3 class="font-medium">{{ post.title }}</h3>
+						<p class="mt-1 line-clamp-2 text-sm text-muted-foreground">{{ post.body }}</p>
+					</article>
+				}
+			}
+		</div>
+	</section>
+
+	<section hlmCard>
+		<div hlmCardHeader>
+			<h2 hlmCardTitle>{{ "feature.example.random.title" | transloco }}</h2>
+			<p hlmCardDescription>{{ "feature.example.random.text" | transloco }}</p>
+		</div>
+
+		<div hlmCardContent class="space-y-4">
+			<button hlmBtn [disabled]="randomPost.isLoading()" (click)="fetchRandomPost()">
+				@if (randomPost.isLoading()) {
+					{{ "feature.example.random.loading" | transloco }}
+				} @else {
+					{{ "feature.example.random.fetch" | transloco }}
+				}
+			</button>
+
+			@if (randomPost.error()) {
+				<p class="text-destructive">{{ "feature.example.random.error" | transloco }}</p>
+			}
+
+			@if (randomPost.hasValue()) {
+				<article class="rounded-lg border border-border p-4">
+					<span hlmBadge variant="secondary">#{{ randomPost.value().id }}</span>
+					<h3 class="mt-2 font-medium">{{ randomPost.value().title }}</h3>
+					<p class="mt-2 text-sm text-muted-foreground">{{ randomPost.value().body }}</p>
+				</article>
+			}
+		</div>
+	</section>
+</div>

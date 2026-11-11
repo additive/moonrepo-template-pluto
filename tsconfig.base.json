@@ -31,7 +31,15 @@
     "moduleResolution": "Bundler",
     "module": "ES2022",
     "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"]
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@pluto/helm/badge": ["./libs/ui-helm/src/badge/src/index.ts"],
+      "@pluto/helm/button": ["./libs/ui-helm/src/button/src/index.ts"],
+      "@pluto/helm/card": ["./libs/ui-helm/src/card/src/index.ts"],
+      "@pluto/helm/skeleton": ["./libs/ui-helm/src/skeleton/src/index.ts"],
+      "@pluto/helm/utils": ["./libs/ui-helm/src/utils/src/index.ts"]
+    },
+    "rootDir": "."
   },
   "angularCompilerOptions": {
     "disableTypeScriptVersionCheck": true,

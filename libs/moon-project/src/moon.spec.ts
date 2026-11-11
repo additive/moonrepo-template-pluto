@@ -21,7 +21,7 @@ describe('MOON_PROJECT', () => {
 		moonProject = TestBed.inject(MOON_PROJECT)
 	})
 
-	it('should have equal metadata', () => {
-		expect(moonProject.metadata).toMatchObject(moonProjectRaw.metadata)
+	it('should expose the custom project value', () => {
+		expect(moonProject.yourValueHere).toBe(moonProjectRaw.yourValueHere)
 	})
 })

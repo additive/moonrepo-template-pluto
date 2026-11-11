@@ -1,0 +1,55 @@
+{
+  "feature": {
+    "example": {
+      "posts": {
+        "error": "Failed to load the posts.",
+        "text": "Loaded when the page opens, with",
+        "title": "Loaded posts"
+      },
+      "random": {
+        "error": "Failed to fetch the post.",
+        "fetch": "Fetch a random post",
+        "loading": "Fetching…",
+        "text": "The resource refetches whenever the signal it reads changes.",
+        "title": "Fetched on demand"
+      },
+      "subtitle": "Angular's reactive httpResource, with signal-based loading and error states.",
+      "title": "httpResource example"
+    },
+    "not-found": {
+      "back": "Back",
+      "text": "This page does not exist, or it moved."
+    },
+    "welcome": {
+      "getting-started": {
+        "text": "Explore the code to see how apps, features, layouts and UI components are organized. The conventions for working on it are in",
+        "title": "Getting started"
+      },
+      "modern": {
+        "text": "Angular 22 with standalone components, signals and zoneless change detection.",
+        "title": "Fast and modern"
+      },
+      "monorepo": {
+        "text": "moonrepo orchestrates the tasks of every app and library, cached and affected-aware.",
+        "title": "Monorepo ready"
+      },
+      "subtitle": "Your Angular moonrepo template",
+      "title": "Welcome to Pluto",
+      "ui": {
+        "text": "spartan/ui components on Tailwind CSS v4, translated with transloco.",
+        "title": "UI included"
+      }
+    }
+  },
+  "layout": {
+    "main": {
+      "navigation": "Main navigation",
+      "switch-language": "Switch language"
+    }
+  },
+  "route": {
+    "example": "HTTP example",
+    "not-found": "Page not found",
+    "welcome": "Welcome"
+  }
+}

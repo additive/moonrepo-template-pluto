@@ -30,24 +30,25 @@ Born from real-world enterprise applications, this template provides a battle-te
 | Category                 | Tools                                          |
 | ------------------------ | ---------------------------------------------- |
 | **Task Orchestration**   | moonrepo, moonrepo templates, prototools       |
-| **Code Quality**         | Biome, ESLint, Stylelint, Prettier             |
-| **Styling**              | Tailwind CSS v4, SCSS                          |
-| **Package Management**   | pnpm, Node.js                                  |
+| **Code Quality**         | oxlint, oxfmt, commitlint, gitleaks            |
+| **UI**                   | spartan/ui, Tailwind CSS v4, ng-icons (Lucide) |
+| **i18n**                 | transloco (English, German)                    |
+| **Package Management**   | pnpm, Node.js, Socket Firewall                 |
 | **Developer Experience** | justfile, editorconfig, VS Code & Zed settings |
 | **TypeScript**           | Very strict tsconfig — we don't mess around!   |
-| **AI Ready**             | Claude Code instructions (`CLAUDE.md`)         |
+| **AI Ready**             | Agent instructions (`AGENTS.md`)               |
 
 ## Quick Start
 
 ```bash
-# Install dependencies
-pnpm install
+# Install tools and dependencies
+just setup
 
 # Start development server
 just dev
 
 # Build for production
-moon pluto:build
+moon run pluto:build
 
 # Run all linters
 just lint
@@ -78,6 +79,7 @@ pluto/
 | `app-config`      | Application configuration         |
 | `app-environment` | Environment variables             |
 | `app-http`        | HTTP client and interceptors      |
+| `app-i18n`        | Translations and locale files     |
 | `app-layout`      | Main layout components            |
 | `app-theme`       | Global theme and Tailwind setup   |
 
@@ -91,11 +93,11 @@ pluto/
 
 ### Utilities
 
-| Library         | Purpose                            |
-| --------------- | ---------------------------------- |
-| `moon-project`  | Access `moon.yml` config in code   |
-| `plugin-eslint` | Shared ESLint configuration        |
-| `types`         | Global TypeScript types and resets |
+| Library        | Purpose                            |
+| -------------- | ---------------------------------- |
+| `moon-project` | Access `moon.yml` config in code   |
+| `ui-helm`      | Vendored spartan/ui components     |
+| `types`        | Global TypeScript types and resets |
 
 ## AI Assisted
 

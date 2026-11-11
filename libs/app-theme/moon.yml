@@ -1,19 +1,15 @@
-id: 'app-theme'
-layer: 'library'
-language: 'javascript'
-stack: 'frontend'
+id: app-theme
+layer: library
+language: javascript
+stack: frontend
 tags:
   - core
   - resources
-  - styles
 project:
-  name: 'Theme'
-  description: 'Primary theme, colors and mixins'
-workspace:
-  inheritedTasks:
-    exclude: ['test']
+  description: Primary theme, colors and mixins
+  title: Theme
 fileGroups:
   sources:
-    - './**/*.{css,scss}'
+    - ./**/*.css
   styles:
-    - './**/*.{css,scss}'
+    - ./**/*.css

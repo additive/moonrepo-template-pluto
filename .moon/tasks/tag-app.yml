@@ -1,31 +1,25 @@
-$schema: 'https://moonrepo.dev/schemas/tasks.json'
+$schema: '../cache/schemas/tasks.json'
 
 fileGroups:
   app:
     - 'src/**/*.{ts,html}'
-    - '/angular.json'
+    - /angular.json
 
 tasks:
-
-  # Development
-
   dev:
-    command: 'ng serve'
-    preset: 'watcher'
+    command: ng serve
     env:
-      NODE_ENV: 'development'
+      NODE_ENV: development
     deps:
-      - target: 'generator-dev-certs'
+      - target: generator-dev-certs
         env:
-          HOST: 'pluto-host.local'
-
-  # Building
+          HOST: pluto-host.local
 
   build:
-    description: 'Builds the app in production mode'
-    command: 'ng build'
+    description: Builds the app in production mode
+    command: ng build
     env:
-      NODE_ENV: 'production'
+      NODE_ENV: production
     options:
       cache: false
     inputs:
@@ -34,39 +28,39 @@ tasks:
       - '@group(styles)'
       - '@group(assets)'
     outputs:
-      - 'dist/browser/'
+      - dist/browser/
 
   build-dev:
-    description: 'Builds the app in development mode'
-    extends: 'build'
-    args: '-c development'
+    description: Builds the app in development mode
+    extends: build
+    args: -c development
     env:
-      NODE_ENV: 'development'
-
-  # Special build phases
+      NODE_ENV: development
 
   build-analyse:
-    description: 'Builds the app for analysis'
-    extends: 'build'
-    args: '--stats-json'
+    description: Builds the app for analysis
+    extends: build
+    args: --stats-json
 
   build-pack:
-    description: 'Package a build for deployment to a server'
-    script: >
-      cp $projectRoot/dist/3rdpartylicenses.txt $projectRoot/dist/browser/assets/licenses.txt &&
-      cd $projectRoot/dist/ &&
+    description: Packages a build for deployment, versioned and dated
+    script: |
+      cp $projectRoot/dist/3rdpartylicenses.txt $projectRoot/dist/browser/assets/licenses.txt
+      cd $projectRoot/dist/
       zip -FSrq "$project.zip" browser
+      VERSION=$(yq -r '.version' $projectRoot/package.json)
+      cp "$project.zip" "$project-v$VERSION-$date.zip"
     options:
       cache: false
 
   build-release:
-    description: 'Builds a deployable release with additional checks'
-    script: >
-      VERSION=$(yq -r '.version' $projectRoot/package.json)
-      cp "$projectRoot/dist/$project.zip"
-      "$projectRoot/dist/$project-v$VERSION-$date.zip"
+    description: Builds a deployable release
+    script: echo "Done"
     deps:
       - build
       - build-pack
     options:
       runDepsInParallel: false
+
+inheritedBy:
+  tag: app

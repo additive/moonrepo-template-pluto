@@ -5,18 +5,18 @@
   "dependencies": {
     "@pluto-feature/example": "workspace:*",
     "@pluto-feature/not-found": "workspace:*",
+    "@pluto-feature/welcome": "workspace:*",
     "@pluto/assets": "workspace:*",
     "@pluto/build": "workspace:*",
     "@pluto/config": "workspace:*",
     "@pluto/environment": "workspace:*",
+    "@pluto/helm": "workspace:*",
     "@pluto/http": "workspace:*",
+    "@pluto/i18n": "workspace:*",
     "@pluto/layout": "workspace:*",
     "@pluto/moon-project": "workspace:*",
     "@pluto/theme": "workspace:*",
-    "@pluto/types": "workspace:*",
-    "@pluto/ui-icons": "workspace:*"
+    "@pluto/types": "workspace:*"
   },
-  "devDependencies": {
-    "typescript": "5.9.3"
-  }
+  "devDependencies": {}
 }

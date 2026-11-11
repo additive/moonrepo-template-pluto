@@ -1,71 +1,15 @@
 {
   "npm.packageManager": "pnpm",
   "git.inputValidationLength": 72,
-  "git.inputValidationSubjectLength": null,
-  "html.format.wrapAttributes": "preserve-aligned",
   "editor.formatOnSave": true,
-  "editor.inlineSuggest.enabled": true,
-  "eslint.probe": ["javascript", "typescript", "html"],
-  "eslint.validate": ["javascript", "typescript", "html"],
-  "eslint.workingDirectories": [
-    {
-      "pattern": "apps/*"
-    },
-    {
-      "pattern": "libs/*"
-    }
-  ],
-  "eslint.useESLintClass": true,
-  "eslint.format.enable": false,
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit"
+  },
+  "oxc.fmt.configPath": ".oxfmtrc.json",
   "angular.enable-strict-mode-prompt": false,
-  "css.validate": false,
-  "scss.validate": false,
-  "stylelint.packageManager": "pnpm",
-  "stylelint.validate": ["css", "scss"],
-  "[css][scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": "explicit"
-    }
-  },
-  "[javascript][typescript]": {
-    "editor.defaultFormatter": "biomejs.biome",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit",
-      "source.fixAll.biome": "explicit",
-      "source.organizeImports.biome": "explicit",
-      "source.action.useSortedKeys.biome": "explicit"
-    }
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "always"
-    }
-  },
-  "cSpell.ignorePaths": [
-    ".git",
-    ".angular",
-    "dist",
-    ".vscode",
-    "node_modules"
-  ],
-  "cSpell.words": [
-    "lefthook",
-    "moonrepo",
-    "ngrx",
-    "shiki",
-    "struct",
-    "titleize",
-    "transloco"
-  ]
+  "css.lint.unknownAtRules": "ignore",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }

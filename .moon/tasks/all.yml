@@ -1,0 +1,34 @@
+# https://moonrepo.dev/docs/config/tasks
+$schema: '../cache/schemas/tasks.json'
+
+implicitInputs:
+  - moon.yml
+  - package.json
+
+fileGroups:
+  app: [] # app build files, set per project
+  sources:
+    - 'src/**/*.{js,mjs,ts}'
+  templates:
+    - 'src/**/*.html'
+  styles:
+    - 'src/**/*.css'
+  tests:
+    - '**/*.spec.*'
+    - '**/__snapshots__/**/*'
+  assets:
+    - 'public/**/*'
+    - 'assets/**/*'
+    - '**/*.md'
+
+tasks:
+  generator-dev-certs:
+    description: Generate development certificates
+    script: |
+      mkdir -p certs/ && mkcert -ecdsa -cert-file certs/dev.crt -key-file certs/dev-key.crt \
+        pluto.local $HOST 127.0.0.1 localhost
+    outputs:
+      - '**/certs/**'
+    options:
+      internal: true
+      runInCI: false

@@ -1,8 +1,9 @@
-Chrome >= 111
-Edge >= 111
-Firefox >= 112
-Safari >= 16.4
-ChromeAndroid >= 111
-FirefoxAndroid >= 112
-iOS >= 16.4
+# Angular 22's supported browsers. eslint-plugin-compat (oxlint) checks against this too.
+Chrome >= 119
+Edge >= 119
+Firefox >= 119
+Safari >= 17
+ChromeAndroid >= 119
+FirefoxAndroid >= 119
+iOS >= 17
 not dead

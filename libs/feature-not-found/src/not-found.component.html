@@ -1,0 +1,18 @@
+<div class="flex min-h-dvh flex-col items-center justify-center px-6 text-center">
+	<h1 class="text-9xl font-black text-primary">404</h1>
+
+	<p class="mt-4 max-w-xl text-xl text-muted-foreground">
+		{{ "feature.not-found.text" | transloco }}
+	</p>
+
+	@if (referrer()) {
+		<code class="mt-4 rounded bg-muted px-3 py-1 font-mono text-sm break-all">
+			{{ referrer() }}
+		</code>
+	}
+
+	<button hlmBtn size="lg" class="mt-10" (click)="goBack()">
+		<ng-icon name="lucideArrowLeft" />
+		{{ "feature.not-found.back" | transloco }}
+	</button>
+</div>

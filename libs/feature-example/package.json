@@ -8,7 +8,8 @@
     "./*": "./src/*.js"
   },
   "dependencies": {
-    "@pluto/types": "workspace:*",
-    "@pluto/http": "workspace:*"
+    "@pluto/helm": "workspace:*",
+    "@pluto/http": "workspace:*",
+    "@pluto/types": "workspace:*"
   }
 }

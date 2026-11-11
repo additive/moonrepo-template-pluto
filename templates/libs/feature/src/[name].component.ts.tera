@@ -1,0 +1,12 @@
+import { Component } from '@angular/core'
+import { TranslocoPipe } from '@jsverse/transloco'
+
+/**
+ * {{ desc }}
+ */
+@Component({
+	selector: 'app-feature-{{ name }}',
+	templateUrl: './{{ name }}.component.html',
+	imports: [TranslocoPipe],
+})
+export class {{ name | pascal_case }}Feature {}

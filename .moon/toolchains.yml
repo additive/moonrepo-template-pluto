@@ -1,0 +1,22 @@
+# https://moonrepo.dev/docs/config/toolchain
+$schema: './cache/schemas/toolchain.json'
+
+javascript:
+  packageManager: pnpm
+  syncPackageManagerField: true
+  dependencyVersionFormat: workspace
+
+typescript:
+  projectConfigFileName: tsconfig.json
+  rootConfigFileName: tsconfig.json
+  rootOptionsConfigFileName: tsconfig.base.json
+  routeOutDirToCache: true
+  createMissingConfig: true
+  syncProjectReferencesToPaths: true
+  syncProjectReferences: true
+
+node:
+  version: '24.19.0'
+
+pnpm:
+  version: '11.21.0'

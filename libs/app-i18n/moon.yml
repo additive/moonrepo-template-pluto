@@ -1,0 +1,21 @@
+id: app-i18n
+layer: library
+language: typescript
+stack: frontend
+tags:
+  - core
+project:
+  title: App i18n
+  description: Translations (transloco) and the shared locale files
+dependsOn:
+  - types
+
+tasks:
+  lint:
+    description: Validates the locale files and checks every language has the same keys
+    script: |
+      transloco-validator locales/*.json
+      node $workspaceRoot/scripts/locale-parity-check.mts locales
+    inputs:
+      - 'locales/*.json'
+      - /scripts/locale-parity-check.mts

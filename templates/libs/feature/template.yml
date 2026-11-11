@@ -1,22 +1,14 @@
-title: 'Feature library'
+title: Feature library
 description: |
-  Scaffolds a feature library that can be included anywhere in an application
-  with ready to use menu and routes.
-destination: 'libs/feature-[name]'
+  Scaffolds a feature library with a routed page that can be mounted anywhere in an app.
+destination: libs/feature-[name]
 variables:
   name:
-    type: 'string'
+    type: string
     default: ''
     required: true
-    prompt: 'Feature name?'
-  name_a: # alias
-    internal: true
-    default: '{{ name | kebab_case }}'
-  name_c: # component name
-    internal: true
-    default: '{{ name | pascal_case }}'
-  menu:
-    type: 'enum'
-    values: ['', 'main', 'user', 'docs', 'settings', 'ui', 'ui-blocks', 'ui-components']
+    prompt: Feature name (kebab-case)?
+  desc:
+    type: string
     default: ''
-    prompt: 'In menu?'
+    prompt: Short description?

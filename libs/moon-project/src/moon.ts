@@ -1,6 +1,6 @@
+import { type } from 'arktype'
 import fs from 'node:fs'
 import path from 'node:path'
-import { type } from 'arktype'
 import { parse as yamlParse } from 'yaml'
 
 import { MoonConfig } from './schemas'
@@ -10,7 +10,7 @@ export function getMoonConfig(projectRoot: string) {
 	const moonObject = yamlParse(contents) as unknown
 	const config = MoonConfig(moonObject)
 	if (config instanceof type.errors) {
-		throw new Error(config.summary)
+		throw new TypeError(config.summary)
 	}
 	return config
 }

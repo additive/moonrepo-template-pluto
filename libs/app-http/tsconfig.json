@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/app-http",
     "paths": {
       "@pluto/environment": ["../app-environment/src/index.ts"],

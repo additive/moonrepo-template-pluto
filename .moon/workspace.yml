@@ -1,30 +1,24 @@
 # https://moonrepo.dev/docs/config/workspace
-$schema: 'https://moonrepo.dev/schemas/workspace.json'
+$schema: './cache/schemas/workspace.json'
 
-# defaultProject: 'pluto'
-
-# projects:
-#   globFormat: 'source-path'
-#   glob:
-#     - 'apps/*'
-#     - 'libs/*'
 projects:
-  - 'apps/*'
-  - 'libs/*'
+  - apps/*
+  - libs/*
 
 generator:
   templates:
-    - './templates/libs'
+    - ./templates/libs
 
 vcs:
-  manager: 'git'
-  defaultBranch: 'main'
-  provider: 'github'
-  syncHooks: true
+  defaultBranch: main
+  provider: github
+  sync: true
   hooks:
     pre-commit:
-      - 'moon run :lint --affected --status=staged'
+      - just lint-staged
+      - moon run :lint --affected --status=staged
+      - gitleaks git --pre-commit --redact --staged --no-banner
     commit-msg:
-      - 'pnpm commitlint --edit --no-color'
+      - pnpm commitlint --edit --no-color
 
-telemetry: true
+telemetry: false

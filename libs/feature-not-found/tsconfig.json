@@ -1,10 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/feature-not-found",
     "paths": {
-      "@pluto/types/*": ["../types/src/*"]
+      "@pluto/types/*": ["../types/src/*"],
+      "@pluto/helm/*": ["../ui-helm/src/*"]
     }
   },
   "files": [],
@@ -12,6 +12,9 @@
   "references": [
     {
       "path": "../types"
+    },
+    {
+      "path": "../ui-helm"
     },
     {
       "path": "tsconfig.editor.json"

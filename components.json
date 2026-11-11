@@ -1,0 +1,5 @@
+{
+  "componentsPath": "libs/ui-helm/src",
+  "importAlias": "@pluto/helm",
+  "style": "nova"
+}

@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/style/useConsistentTypeDefinitions: only interfaces can extend each other */
-
 /**
  * Do not use directly, use `MOON_PROJECT` injection
  * token instead!

@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/style/useConsistentTypeDefinitions: only interfaces can extend each other */
-
 import type { CreateSignalOptions, WritableSignal } from '@angular/core'
 import type { Observable } from 'rxjs'
 

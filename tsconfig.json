@@ -3,49 +3,49 @@
   "files": [],
   "references": [
     {
-      "path": "apps/pluto"
+      "path": "./apps/pluto"
     },
     {
-      "path": "libs/app-assets"
+      "path": "./libs/app-assets"
     },
     {
-      "path": "libs/app-build"
+      "path": "./libs/app-build"
     },
     {
-      "path": "libs/app-config"
+      "path": "./libs/app-config"
     },
     {
-      "path": "libs/app-environment"
+      "path": "./libs/app-environment"
     },
     {
-      "path": "libs/app-http"
+      "path": "./libs/app-http"
     },
     {
-      "path": "libs/app-layout"
+      "path": "./libs/app-i18n"
     },
     {
-      "path": "libs/app-theme"
+      "path": "./libs/app-layout"
     },
     {
-      "path": "libs/feature-welcome"
+      "path": "./libs/app-theme"
     },
     {
-      "path": "libs/feature-example"
+      "path": "./libs/feature-example"
     },
     {
-      "path": "libs/feature-not-found"
+      "path": "./libs/feature-not-found"
     },
     {
-      "path": "libs/moon-project"
+      "path": "./libs/feature-welcome"
     },
     {
-      "path": "libs/plugin-eslint"
+      "path": "./libs/moon-project"
     },
     {
-      "path": "libs/types"
+      "path": "./libs/types"
     },
     {
-      "path": "libs/ui-icons"
+      "path": "./libs/ui-helm"
     }
   ]
 }

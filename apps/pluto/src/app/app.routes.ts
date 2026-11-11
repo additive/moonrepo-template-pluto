@@ -8,7 +8,8 @@ export default [
 	},
 	{
 		path: 'pluto',
-		loadComponent: () => import('@pluto/layout/main/main.feature').then((m) => m.MainFeature),
+		loadComponent: () =>
+			import('@pluto/layout/main/main.component').then((m) => m.MainFeature),
 		children: [
 			{
 				path: '',
@@ -27,9 +28,9 @@ export default [
 	},
 	{
 		path: 'page-not-found',
-		title: 'Page Not Found',
+		title: 'route.not-found',
 		loadComponent: () =>
-			import('@pluto-feature/not-found/not-found.feature').then((m) => m.NotFoundFeature),
+			import('@pluto-feature/not-found/not-found.component').then((m) => m.NotFoundFeature),
 	},
 	{
 		path: '**',

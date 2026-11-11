@@ -1,7 +1,7 @@
-id: 'types'
-layer: 'configuration'
-language: 'typescript'
-stack: 'frontend'
+id: types
+layer: configuration
+language: typescript
+stack: frontend
 project:
-  name: 'Types'
-  description: 'Global type definitions'
+  description: Global type definitions
+  title: Types

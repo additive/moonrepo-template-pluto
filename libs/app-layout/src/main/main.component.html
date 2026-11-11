@@ -1,0 +1,40 @@
+<header class="border-b border-border">
+	<div class="container mx-auto flex flex-wrap items-center justify-between gap-4 px-6 py-4">
+		<a routerLink="/pluto" class="flex items-center gap-3">
+			<img ngSrc="assets/brand/pluto.png" alt="" width="40" height="40" priority />
+			<span class="text-xl font-semibold">Pluto</span>
+		</a>
+
+		<nav
+			class="flex items-center gap-1"
+			[attr.aria-label]="'layout.main.navigation' | transloco"
+		>
+			@for (item of menu(); track item.href) {
+				<a
+					hlmBtn
+					variant="ghost"
+					[routerLink]="item.href"
+					routerLinkActive="bg-muted text-foreground"
+					ariaCurrentWhenActive="page"
+				>
+					{{ item.label | transloco }}
+				</a>
+			}
+
+			<button
+				hlmBtn
+				variant="outline"
+				class="ms-2"
+				[attr.aria-label]="'layout.main.switch-language' | transloco"
+				(click)="toggleLanguage()"
+			>
+				<ng-icon name="lucideLanguages" />
+				{{ nextLanguageName() }}
+			</button>
+		</nav>
+	</div>
+</header>
+
+<main class="container mx-auto px-6">
+	<router-outlet />
+</main>

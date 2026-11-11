@@ -1,27 +1,27 @@
-id: 'pluto'
-layer: 'application'
-language: 'typescript'
-stack: 'frontend'
+id: pluto
+layer: application
+language: typescript
+stack: frontend
 tags:
   - app
   - tests
-  - styles
 project:
-  name: 'Pluto'
+  title: Pluto
   description: '...'
   channel: '#xxxxxxx'
-  metadata:
-    yourValueHere: 'Hey'
+  yourValueHere: Hey
 dependsOn:
   - app-assets
   - app-build
   - app-config
   - app-environment
   - app-http
+  - app-i18n
   - app-layout
   - app-theme
   - feature-example
   - feature-not-found
+  - feature-welcome
   - moon-project
   - types
-  - ui-icons
+  - ui-helm

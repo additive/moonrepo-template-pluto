@@ -1,12 +1,12 @@
-id: 'app-build'
-layer: 'library'
-language: 'typescript'
-stack: 'frontend'
+id: app-build
+layer: library
+language: typescript
+stack: frontend
 tags:
   - core
 project:
-  name: 'App Build'
-  description: 'Build utilities, plugins and transformers'
+  description: Build utilities, plugins and transformers
+  title: App Build
 dependsOn:
   - moon-project
   - types

@@ -1,8 +1,11 @@
-$schema: 'https://moonrepo.dev/schemas/tasks.json'
+$schema: '../cache/schemas/tasks.json'
 
 tasks:
   test:
-    command: 'ng test --watch=false'
+    command: ng test --watch=false
     inputs:
       - '@group(sources)'
       - '@group(tests)'
+
+inheritedBy:
+  tag: tests

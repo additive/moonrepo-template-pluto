@@ -8,6 +8,7 @@ export const MOON_PROJECT = new InjectionToken<MoonProject>('Moon project')
  * Provide initial env value for moon project app configuration.
  */
 export function provideMoonProject(): ApplicationConfig['providers'] {
+	// oxlint-disable-next-line typescript/no-unsafe-type-assertion -- the esbuild plugin validated it at build time
 	const config = MOON_PROJECT_JSON as MoonProject
 
 	return [
@@ -18,7 +19,7 @@ export function provideMoonProject(): ApplicationConfig['providers'] {
 		provideAppInitializer(() => {
 			// For example:
 			// sentry.setContext('customer', {
-			// 	name: config.metadata.customerName,
+			// 	name: config.yourValueHere,
 			// })
 		}),
 	]

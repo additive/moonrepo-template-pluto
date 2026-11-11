@@ -1,0 +1,36 @@
+<header class="py-16 text-center">
+	<div class="mb-6 flex items-center justify-center gap-3 text-primary">
+		<ng-icon name="lucideSparkles" class="text-2xl" />
+		<ng-icon name="lucideMoon" class="text-5xl" />
+		<ng-icon name="lucideSparkles" class="text-2xl" />
+	</div>
+	<h1 class="text-5xl font-black tracking-tight text-balance">
+		{{ "feature.welcome.title" | transloco }}
+	</h1>
+	<p class="mt-4 text-xl text-muted-foreground">
+		{{ "feature.welcome.subtitle" | transloco }}
+	</p>
+</header>
+
+<section class="grid gap-6 pb-8 md:grid-cols-3">
+	@for (card of cards; track card) {
+		<section hlmCard>
+			<div hlmCardHeader>
+				<h2 hlmCardTitle>{{ "feature.welcome." + card + ".title" | transloco }}</h2>
+				<p hlmCardDescription>{{ "feature.welcome." + card + ".text" | transloco }}</p>
+			</div>
+		</section>
+	}
+</section>
+
+<section hlmCard class="mb-16">
+	<div hlmCardHeader>
+		<h2 hlmCardTitle>{{ "feature.welcome.getting-started.title" | transloco }}</h2>
+	</div>
+	<p hlmCardContent class="leading-relaxed text-muted-foreground">
+		{{ "feature.welcome.getting-started.text" | transloco }}
+		<code class="rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-foreground"
+			>AGENTS.md</code
+		>
+	</p>
+</section>

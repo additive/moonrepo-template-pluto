@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/style/useConsistentTypeDefinitions: only interfaces can extend each other */
-
 /// <reference types="@total-typescript/ts-reset" />
 /// <reference types="@ark/util" />
 /// <reference types="angular-router-menus" />

@@ -1,9 +1,13 @@
-just = "1.46.0"
-moon = "1.41.8"
-node = "24.12.0"
-pnpm = "10.27.0"
-yq = "4.50.1"
+gitleaks = "8.30.1"
+just = "1.58.0"
+moon = "2.4.6"
+node = "24.19.0"
+pnpm = "11.21.0"
+sfw = "1.15.0"
+yq = "4.53.3"
 
-[plugins.tools]
-just = "https://raw.githubusercontent.com/Phault/proto-toml-plugins/main/just/plugin.toml"
-yq = "https://raw.githubusercontent.com/appthrust/proto-toml-plugins/main/yq/plugin.toml"
+[plugins]
+gitleaks = "https://github.com/muuvmuuv/proto-plugins/releases/download/gitleaks_tool-v0.3.0/gitleaks_tool.wasm"
+just = "https://github.com/muuvmuuv/proto-plugins/releases/download/just_tool-v0.3.0/just_tool.wasm"
+sfw = "https://github.com/muuvmuuv/proto-plugins/releases/download/sfw_tool-v0.2.0/sfw_tool.wasm"
+yq = "https://github.com/muuvmuuv/proto-plugins/releases/download/yq_tool-v0.4.0/yq_tool.wasm"

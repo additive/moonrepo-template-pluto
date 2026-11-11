@@ -1,0 +1,58 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["oxc", "typescript", "unicorn", "import"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error",
+    "pedantic": "error"
+  },
+  "ignorePatterns": ["**/*generated*", "libs/ui-helm/**"],
+  "rules": {
+    "eslint/max-lines": "off",
+    "typescript/consistent-type-definitions": ["error", "type"],
+    "typescript/consistent-type-imports": "error",
+    "typescript/no-extraneous-class": [
+      "error",
+      {
+        "allowWithDecorator": true
+      }
+    ],
+    "typescript/strict-boolean-expressions": "off",
+    "unicorn/no-null": "off",
+    "typescript/prefer-readonly-parameter-types": "off",
+    "eslint/no-inline-comments": "off",
+    "eslint/no-redeclare": "off",
+    "unicorn/no-useless-undefined": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/src/**/*.ts"],
+      "jsPlugins": ["eslint-plugin-compat"],
+      "rules": {
+        "compat/compat": "error",
+        "eslint/max-lines-per-function": [
+          "error",
+          {
+            "max": 70,
+            "skipBlankLines": true
+          }
+        ],
+        "eslint/no-console": [
+          "error",
+          {
+            "allow": ["debug", "info", "warn", "error", "groupCollapsed", "groupEnd"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "typescript/consistent-type-definitions": "off",
+        "typescript/consistent-type-imports": "off",
+        "unicorn/require-module-specifiers": "off"
+      }
+    }
+  ]
+}

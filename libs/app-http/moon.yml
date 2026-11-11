@@ -1,11 +1,11 @@
-id: 'app-http'
-layer: 'library'
-language: 'typescript'
-stack: 'frontend'
+id: app-http
+layer: library
+language: typescript
+stack: frontend
 tags:
   - core
 project:
-  name: 'App HTTP library'
-  description: 'All sort of HTTP handling, middlewares and stuff'
+  description: All sort of HTTP handling, middlewares and stuff
+  title: App HTTP library
 dependsOn:
   - app-environment

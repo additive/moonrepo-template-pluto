@@ -1,0 +1,55 @@
+{
+  "feature": {
+    "example": {
+      "posts": {
+        "error": "Die Beiträge konnten nicht geladen werden.",
+        "text": "Beim Öffnen der Seite geladen, mit",
+        "title": "Geladene Beiträge"
+      },
+      "random": {
+        "error": "Der Beitrag konnte nicht abgerufen werden.",
+        "fetch": "Zufälligen Beitrag abrufen",
+        "loading": "Wird abgerufen…",
+        "text": "Die Ressource lädt neu, sobald sich das gelesene Signal ändert.",
+        "title": "Auf Abruf geladen"
+      },
+      "subtitle": "Angulars reaktive httpResource, mit Lade- und Fehlerzuständen als Signals.",
+      "title": "httpResource-Beispiel"
+    },
+    "not-found": {
+      "back": "Zurück",
+      "text": "Diese Seite gibt es nicht, oder sie ist umgezogen."
+    },
+    "welcome": {
+      "getting-started": {
+        "text": "Im Code siehst du, wie Apps, Features, Layouts und UI-Komponenten aufgebaut sind. Die Konventionen für die Arbeit daran stehen in",
+        "title": "Erste Schritte"
+      },
+      "modern": {
+        "text": "Angular 22 mit Standalone-Komponenten, Signals und zonenloser Change Detection.",
+        "title": "Schnell und modern"
+      },
+      "monorepo": {
+        "text": "moonrepo steuert die Tasks aller Apps und Libraries, gecacht und nur für Betroffenes.",
+        "title": "Bereit fürs Monorepo"
+      },
+      "subtitle": "Dein Angular-moonrepo-Template",
+      "title": "Willkommen bei Pluto",
+      "ui": {
+        "text": "spartan/ui-Komponenten auf Tailwind CSS v4, übersetzt mit transloco.",
+        "title": "UI inklusive"
+      }
+    }
+  },
+  "layout": {
+    "main": {
+      "navigation": "Hauptnavigation",
+      "switch-language": "Sprache wechseln"
+    }
+  },
+  "route": {
+    "example": "HTTP-Beispiel",
+    "not-found": "Seite nicht gefunden",
+    "welcome": "Willkommen"
+  }
+}

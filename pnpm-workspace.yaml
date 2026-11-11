@@ -2,12 +2,30 @@ packages:
   - apps/*
   - libs/*
 
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - esbuild
-  - lmdb
-  - msgpackr-extract
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  lmdb: false
+  msgpackr-extract: false
+  nx: false
 
 overrides:
   semver: latest
   uuid: latest
+
+# Wait three days before installing a fresh release, so a compromised version
+# has time to be caught and pulled.
+minimumReleaseAge: 4320
+# `ng update` pins the exact latest version, which the age gate would reject
+# (https://github.com/angular/angular-cli/issues/31232). oxlint and oxfmt
+# release weekly together with their platform bindings.
+minimumReleaseAgeExclude:
+  - '@angular/*'
+  - '@angular-devkit/*'
+  - '@schematics/*'
+  - angular-extended-builder
+  - angular-router-menus
+  - oxfmt
+  - '@oxfmt/*'
+  - oxlint
+  - '@oxlint/*'

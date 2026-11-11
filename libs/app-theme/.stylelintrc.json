@@ -1,4 +1,0 @@
-{
-  "extends": "../../.stylelintrc.json",
-  "ignoreFiles": ["./vendor/material/_theme-colors.scss"]
-}

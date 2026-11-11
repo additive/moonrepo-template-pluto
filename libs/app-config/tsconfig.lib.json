@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "types": ["@pluto/types", "@pluto/types/angular", "@pluto/http", "@pluto/moon-project"]
+    "types": ["@pluto/types", "@pluto/types/angular", "@pluto/moon-project"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/**/*.spec.ts"]

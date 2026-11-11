@@ -1,7 +1,5 @@
 .env*
 !.env.example
-.eslintcache
-.stylelintcache
 CHANGELOG.latest.md
 .angular
 .proto
@@ -37,7 +35,6 @@ apps/*/certs
 
 # Misc
 /.angular/cache
-/.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
@@ -48,3 +45,4 @@ testem.log
 .DS_Store
 Thumbs.db
 *.tsbuildinfo
+.nx

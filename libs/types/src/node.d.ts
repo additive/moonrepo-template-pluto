@@ -1,7 +1,4 @@
-/** biome-ignore-all lint/style/useConsistentTypeDefinitions: only interfaces can extend each other */
-
 declare global {
-	// biome-ignore lint/style/noNamespace: no other way
 	namespace NodeJS {
 		interface ProcessEnv {
 			NODE_ENV?: NODE_ENV

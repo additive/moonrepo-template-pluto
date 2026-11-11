@@ -1,11 +1,11 @@
-id: 'feature-not-found'
-layer: 'library'
-language: 'typescript'
-stack: 'frontend'
+id: feature-not-found
+layer: library
+language: typescript
+stack: frontend
 tags:
-  - styles
 project:
-  name: 'Feature Not Found'
-  description: 'Pages for if something is not-found like a wrong page route'
+  description: Pages for if something is not-found like a wrong page route
+  title: Feature Not Found
 dependsOn:
+  - ui-helm
   - types

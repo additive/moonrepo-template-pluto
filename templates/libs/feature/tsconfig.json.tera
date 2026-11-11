@@ -1,21 +1,13 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "../../.moon/cache/types/libs/feature-{{ name }}",
-    "paths": {}
+    "outDir": "../../.moon/cache/types/libs/feature-{{ name }}"
   },
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "tsconfig.editor.json"
-    },
-    {
-      "path": "tsconfig.lib.json"
-    },
-    {
-      "path": "tsconfig.spec.json"
-    }
+    { "path": "tsconfig.editor.json" },
+    { "path": "tsconfig.lib.json" },
+    { "path": "tsconfig.spec.json" }
   ]
 }

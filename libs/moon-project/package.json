@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "main": "./src/index.js",
+  "browser": {
+    "node:fs": false,
+    "node:path": false
+  },
   "types": "./src/types.d.ts",
   "exports": {
     "./package.json": "./package.json",
@@ -13,16 +17,12 @@
       "node": "./src/index.js"
     }
   },
-  "browser": {
-    "node:fs": false,
-    "node:path": false
-  },
   "dependencies": {
     "@pluto/types": "workspace:*",
-    "yaml": "^2.8.2"
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
-    "@moonrepo/types": "^1.33.3",
-    "esbuild": "^0.27.2"
+    "@moonrepo/types": "^2.6.5",
+    "esbuild": "^0.28.2"
   }
 }

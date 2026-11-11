@@ -1,3 +1,0 @@
-import type { StackCustom } from '@pluto/core/log/log-stack'
-
-export const LOG_STACK = 'F::{{ name | pascal_case }}' satisfies StackCustom

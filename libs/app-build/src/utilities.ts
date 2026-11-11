@@ -19,8 +19,9 @@ export function getEnvironment(): BUILD_ENV {
  */
 export function getVersion(): string {
 	const fileContents = fs.readFileSync('package.json').toString('utf8')
-	const package_ = JSON.parse(fileContents) as PackageJson
-	return package_.version ?? '0.0.0'
+	// oxlint-disable-next-line typescript/no-unsafe-type-assertion -- it is the package.json
+	const manifest = JSON.parse(fileContents) as PackageJson
+	return manifest.version ?? '0.0.0'
 }
 
 /**

@@ -1,12 +1,13 @@
-id: 'app-layout'
-layer: 'library'
-language: 'typescript'
-stack: 'frontend'
+id: app-layout
+layer: library
+language: typescript
+stack: frontend
 tags:
   - core
-  - styles
 project:
-  name: 'App Layout'
-  description: 'Main structural layout components'
+  description: Main structural layout components
+  title: App Layout
 dependsOn:
+  - app-i18n
+  - ui-helm
   - types

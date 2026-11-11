@@ -23,12 +23,17 @@
             "crossOrigin": "anonymous",
             "webWorkerTsConfig": "./apps/pluto/tsconfig.worker.json",
             "polyfills": ["@pluto/build/polyfills"],
-            "styles": ["./apps/pluto/node_modules/@pluto/theme/main.scss"],
+            "styles": ["./apps/pluto/node_modules/@pluto/theme/main.css"],
             "assets": [
               {
                 "glob": "**/*",
                 "input": "./apps/pluto/node_modules/@pluto/assets/assets",
                 "output": "/assets/"
+              },
+              {
+                "glob": "*.json",
+                "input": "./apps/pluto/node_modules/@pluto/i18n/locales",
+                "output": "/locales/"
               },
               "./apps/pluto/src/manifest.webmanifest",
               "./apps/pluto/src/robots.txt"
@@ -72,8 +77,8 @@
             }
           },
           "options": {
-            "sslKey": "./certs/dev-key.crt",
-            "sslCert": "./certs/dev.crt"
+            "sslKey": "./apps/pluto/certs/dev-key.crt",
+            "sslCert": "./apps/pluto/certs/dev.crt"
           },
           "defaultConfiguration": "development"
         },

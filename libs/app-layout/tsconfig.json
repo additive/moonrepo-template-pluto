@@ -1,17 +1,25 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "../../.moon/cache/types/libs/app-layout",
     "paths": {
-      "@pluto/types/*": ["../types/src/*"]
+      "@pluto/types/*": ["../types/src/*"],
+      "@pluto/i18n": ["../app-i18n/src/index.ts"],
+      "@pluto/i18n/*": ["../app-i18n/src/*"],
+      "@pluto/helm/*": ["../ui-helm/src/*"]
     }
   },
   "files": [],
   "include": [],
   "references": [
     {
+      "path": "../app-i18n"
+    },
+    {
       "path": "../types"
+    },
+    {
+      "path": "../ui-helm"
     },
     {
       "path": "tsconfig.editor.json"

@@ -10,8 +10,8 @@
   "dependencies": {
     "@pluto/environment": "workspace:*",
     "@pluto/http": "workspace:*",
+    "@pluto/i18n": "workspace:*",
     "@pluto/moon-project": "workspace:*",
-    "@pluto/types": "workspace:*",
-    "@pluto/ui-icons": "workspace:*"
+    "@pluto/types": "workspace:*"
   }
 }

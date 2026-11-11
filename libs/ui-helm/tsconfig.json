@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../.moon/cache/types/libs/ui-helm",
+    "paths": {
+      "@pluto/types/*": ["../types/src/*"]
+    }
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../types"
+    },
+    {
+      "path": "tsconfig.editor.json"
+    },
+    {
+      "path": "tsconfig.lib.json"
+    },
+    {
+      "path": "tsconfig.spec.json"
+    }
+  ]
+}

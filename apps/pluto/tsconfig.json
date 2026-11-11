@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "../../.moon/cache/types/apps/pluto",
     "paths": {
       "@pluto-feature/welcome/*": ["../../libs/feature-welcome/src/*"],
@@ -19,7 +18,9 @@
       "@pluto/moon-project/*": ["../../libs/moon-project/src/*"],
       "@pluto/theme/*": ["../../libs/app-theme/*"],
       "@pluto/types/*": ["../../libs/types/src/*"],
-      "@pluto/ui-icons/*": ["../../libs/ui-icons/src/*"]
+      "@pluto/i18n": ["../../libs/app-i18n/src/index.ts"],
+      "@pluto/i18n/*": ["../../libs/app-i18n/src/*"],
+      "@pluto/helm/*": ["../../libs/ui-helm/src/*"]
     }
   },
   "files": [],
@@ -41,13 +42,13 @@
       "path": "../../libs/app-http"
     },
     {
+      "path": "../../libs/app-i18n"
+    },
+    {
       "path": "../../libs/app-layout"
     },
     {
       "path": "../../libs/app-theme"
-    },
-    {
-      "path": "../../libs/feature-welcome"
     },
     {
       "path": "../../libs/feature-example"
@@ -56,13 +57,16 @@
       "path": "../../libs/feature-not-found"
     },
     {
+      "path": "../../libs/feature-welcome"
+    },
+    {
       "path": "../../libs/moon-project"
     },
     {
       "path": "../../libs/types"
     },
     {
-      "path": "../../libs/ui-icons"
+      "path": "../../libs/ui-helm"
     },
     {
       "path": "tsconfig.app.json"

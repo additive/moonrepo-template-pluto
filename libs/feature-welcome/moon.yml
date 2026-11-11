@@ -1,11 +1,11 @@
-id: 'feature-welcome'
-layer: 'library'
-language: 'typescript'
-stack: 'frontend'
+id: feature-welcome
+layer: library
+language: typescript
+stack: frontend
 tags:
-  - styles
 project:
-  name: 'Feature Welcome'
-  description: 'Welcome landing page for Pluto'
+  description: Welcome landing page for Pluto
+  title: Feature Welcome
 dependsOn:
+  - ui-helm
   - types

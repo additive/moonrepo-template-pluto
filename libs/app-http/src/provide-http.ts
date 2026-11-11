@@ -1,6 +1,5 @@
 import {
 	provideHttpClient,
-	withFetch,
 	withInterceptors,
 	withXsrfConfiguration,
 } from '@angular/common/http'
@@ -12,7 +11,6 @@ import { timeoutInterceptor } from './interceptors/timeout.interceptor'
 
 export function provideHttp(): EnvironmentProviders {
 	return provideHttpClient(
-		withFetch(),
 		withXsrfConfiguration({
 			cookieName: 'XSRF-PLUTO',
 			headerName: 'X-XSRF-PLUTO',

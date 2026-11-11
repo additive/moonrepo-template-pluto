@@ -1,17 +1,10 @@
----
-force: true
----
-id: 'feature-{{ name }}'
-layer: 'library'
-language: 'typescript'
-stack: 'frontend'
-tags:
-  - styles
+id: feature-{{ name }}
+layer: library
+language: typescript
+stack: frontend
 project:
-  name: 'Feature {{ name | title }}'
+  title: Feature {{ name | title }}
   description: '{{ desc }}'
 dependsOn:
-  - app-core
   - types
-  - ui-components
-  - ui-blocks
+  - ui-helm
