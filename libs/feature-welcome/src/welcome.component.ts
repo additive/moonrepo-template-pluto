@@ -29,6 +29,18 @@ import {
 	providers: [provideIcons({ lucideMoon, lucideSparkles })],
 })
 export class WelcomeFeature {
-	/** Translation key segments of the feature cards. */
-	protected readonly cards = ['modern', 'monorepo', 'ui'] as const
+	/** The feature cards: translation key segment and the accent that tints the card. */
+	protected readonly cards = [
+		{
+			key: 'modern',
+			tint: 'border-nebula/25 bg-nebula/10 hover:border-nebula/50',
+			title: 'text-nebula',
+		},
+		{
+			key: 'monorepo',
+			tint: 'border-comet/25 bg-comet/10 hover:border-comet/50',
+			title: 'text-comet',
+		},
+		{ key: 'ui', tint: 'border-star/25 bg-star/10 hover:border-star/50', title: 'text-star' },
+	] as const
 }

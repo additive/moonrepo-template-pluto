@@ -89,11 +89,44 @@
 	--sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+/*
+ * Pluto's own palette on top of the spartan theme above. Recolor the app here: violet
+ * primary, a deep space gradient behind every page, and three accents for highlights.
+ * Templates use them as `text-nebula`, `bg-comet/10`, `border-star/30`.
+ */
+:root {
+	--primary: oklch(0.541 0.281 293.009);
+	--primary-foreground: oklch(0.984 0.003 247.858);
+	--ring: oklch(0.606 0.25 292.717);
+	--space: oklch(0.962 0.018 272.314);
+	--nebula: oklch(0.541 0.281 293.009);
+	--comet: oklch(0.609 0.126 221.723);
+	--star: oklch(0.666 0.179 58.318);
+}
+
+:root.dark {
+	--card: oklch(0.208 0.042 265.755 / 60%);
+	--primary: oklch(0.811 0.111 293.571);
+	--primary-foreground: oklch(0.129 0.042 264.695);
+	--ring: oklch(0.606 0.25 292.717);
+	--space: oklch(0.257 0.09 281.288);
+	--nebula: oklch(0.811 0.111 293.571);
+	--comet: oklch(0.865 0.127 207.078);
+	--star: oklch(0.879 0.169 91.605);
+}
+
+@theme inline {
+	--color-space: var(--space);
+	--color-nebula: var(--nebula);
+	--color-comet: var(--comet);
+	--color-star: var(--star);
+}
+
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply min-h-dvh bg-background bg-linear-to-b from-background via-space to-background bg-fixed text-foreground antialiased;
 	}
 }
